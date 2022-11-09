@@ -1,20 +1,4 @@
-<div class="sistems__container">
-    <section class="sistems">
-        <div class="sistem__pic">
-            <img src="src/img/screenshots/pos-checkout.png" alt="Foto del sistema">
-        </div>
-        <div class="sistem__info">
-            <h2 class="sistem__info__title">Sistema de facturación</h2>
-            <div class="sistem__info__description">
-                Administra tu negocio con un sistema de facturación, ólvidate de esas facturas manuales,
-                hojas de cálculo o calculadoras, deja que el sistema lo haga todo por ti. Obtén la facilidad
-                de...
-            </div>
-            <button class="btn">Ver más</button>
-        </div>
-
-    </section>
-</div>
+ 
 <div class="sistems__container">
     <section class="sistems">
         <div class="sistem__pic">
