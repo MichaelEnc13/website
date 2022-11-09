@@ -12,7 +12,7 @@
     --font-color: #837e7e;
     --background: #E8E9EC;
     --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    --box-shadow: 4px 4px 5px #57575740;
+    --box-shadow: 4px 4px 5px #57575744;
 }
 
 body {
@@ -71,7 +71,7 @@ body {
     width: 100%;
     margin: auto;
     display: grid;
-    grid-template-columns: 15% 15% 15% 55%;
+    grid-template-columns: auto auto auto auto auto;
 }
 
 .nav__items {
@@ -348,6 +348,57 @@ section {
 }
 
 
+/* Sistems */
+
+.sistems__container {
+    padding: 30px;
+}
+
+.sistems {
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: auto auto;
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+}
+
+.btn {
+    padding: 10px 24px;
+    font-size: 18px;
+    margin: 15px;
+    font-family: var(--font-family);
+    font-weight: bold;
+    background-color: var(--main-color);
+    color: white;
+    border: none;
+    box-shadow: var(--box-shadow);
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.sistems img {
+    width: 100%;
+    margin: auto;
+}
+
+.sistem__info {
+    padding: 15px;
+}
+
+.sistem__info__title {
+    color: var(--main-color);
+    text-transform: uppercase;
+}
+
+.sistem__info__description {
+    color: var(--font-color);
+    font-size: 17px;
+}
+
+
 /* footer */
 
 .footer {
@@ -508,6 +559,11 @@ section {
     /* Cliente */
     .client__title {
         font-size: 37px;
+    }
+    /* Sistemas */
+    .sistems {
+        display: flex;
+        flex-direction: column;
     }
 }
 
