@@ -494,6 +494,7 @@ img {
     top: 40%;
     z-index: 1;
     font-size: 30px;
+    color: var(--main-color);
 }
 
 .sistem_description {
