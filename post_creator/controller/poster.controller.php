@@ -1,6 +1,6 @@
 <?php
 
-include file_exists("autoload.php") ? "autoload.php" : "../post_creator/model/autoload.php";
+include file_exists("autoload.php") ? "autoload.php" : "../model/autoload.php";
 
 
 if (isset($_REQUEST)) :
@@ -13,7 +13,13 @@ if (isset($_REQUEST)) :
     $plan = isset($_POST['plan']) ? $_POST['plan'] : "";
     $date = isset($_POST['date']) ? $_POST['date'] : "";
 
+if(isset($_POST['create_test'])):
+    $data = json_encode($_POST);
+    $done = Poster::create_test($data);
+    
+    var_dump($data);
 
+endif;
 
     if (isset($_POST['create'])) :
         $done = Poster::create(
@@ -24,7 +30,7 @@ if (isset($_REQUEST)) :
             $imgs,
             $plan,
             $date
-        )['data'];
+        );
     endif;
     if (isset($_POST['update'])) :
         $done = Poster::update(
@@ -36,10 +42,10 @@ if (isset($_REQUEST)) :
             $plan,
             $date,
             $id
-        )['data'];
+        );
     endif;
     if (isset($_POST['delete'])) :
 
-        $done = Poster::delete($id)['data'];
+        $done = Poster::delete($id);
     endif;
 endif;

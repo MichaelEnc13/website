@@ -1,17 +1,6 @@
-<section class="container__dashboard">
-    <div class="menu__dash">
-        <h3 class="title__dash">Dotsell Solutions</h3>
-        <button class="btn__exit">Exit</button>
-    </div>
-    <div class="container__dash">
-        <div class="nav__dashboard">
-            <div class="btn__nav__dash">
-                <button>Sistemas</button>
-                </div>
-            <div class="btn__nav__dash">
-                <button>Agregar Sistemas</button>
-                </div>
-        </div>
+
+
+        <?php include "nav.php"?>
         <div class="sistem__dashboard">
             <div class="container__system">
                 <div class="info__system">
@@ -125,8 +114,5 @@
             </div>
         </div>
     </div>
-</section>
-<script src="src/libs/jquery.min.js"></script>
-<script src="src/libs/sweetAlert.js"></script>
-<script src="src/libs/all.min.js"></script>
-<script src="src/js/script.js"></script>
+ 
+<?php include "footer.php"?>

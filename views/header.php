@@ -18,6 +18,7 @@ $tel = "+1 829-445-5432";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="src/css/styles.css">
     <link rel="stylesheet" href="src/libs/all.min.css">
+    <link rel="stylesheet" href="src/libs/trumbowyg.min.css">
     <link rel="shortcut icon" href="src/img/logo.png" type="image/x-icon">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-B5498KPHKT"></script>
 <script>

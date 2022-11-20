@@ -10,8 +10,8 @@ class Poster extends Db
 
     public static function create_test($data)
     {
-        $json = json_encode($data);
-        $array = array($json);
+       
+        $array = array($data);
         $query = "INSERT INTO test (post_info) VALUES(?)";
         return Poster::queries($query, $array);
     }
@@ -40,11 +40,18 @@ class Poster extends Db
         $query = "SELECT * FROM sistems_info";
         return Poster::queries($query,false);
     }
+
     public static function get_post($id)
     {
         $array = array($id);
-        $query = "SELECT * FROM sistems_info";
+        $query = "SELECT * FROM test WHERE id = ?";
         return Poster::queries($query,$array);
+    }
+
+
+    public static function upload($imgs){
+      
+
     }
 }
 

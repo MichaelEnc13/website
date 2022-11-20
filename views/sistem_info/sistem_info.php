@@ -2,8 +2,7 @@
     <?php include "header.php" ?>
 
     <div class="sistem_description">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas recusandae itaque tempore distinctio ea eveniet expedita ipsa ducimus, voluptatem quos nam blanditiis delectus illum provident, optio laudantium, omnis quis quam.
-    </div>
+    <?php echo $post_info['description'] ?>    </div>
 
     <div class="sistem_screenshot">
         <h2 class="title">screenshots</h2>
@@ -25,7 +24,7 @@
         <div class="features_info">
             <h2 class="title">Caracteristicas</h2>
             <div class="features_info_data">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laborum error magni nemo accusamus quia enim temporibus dolorum nesciunt aliquid numquam, iure nihil ea reiciendis totam modi iusto distinctio quae alias?
+                <?php echo $post_info['features'] ?>
             </div>
         </div>
         <div class="features_info_img">
