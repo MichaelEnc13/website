@@ -749,9 +749,10 @@ img {
     }
     .btn__exit{
         border: none;
-        background-color: var(--font-color);
+        background-color: rgb(212, 47, 47);
         box-shadow: var(--box-shadow);
         padding: 15px;
+        width: 100px;
         border-radius: 20px;
         font-size: 20px;
         color: #fff;
@@ -788,8 +789,11 @@ img {
     }
     .btn__nav__dash:hover{
         cursor: pointer;
-        background-color: var(--font-color);
+        background-color: #fff;
         transition: all ease-in-out .4s;
+    }
+    .btn__nav__dash:hover button{
+        color: var(--main-color);
     }
     .sistem__dashboard{
         width: 100%;
