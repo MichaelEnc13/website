@@ -833,6 +833,87 @@ img {
         position: relative;
         bottom: 15px;
     }
+    /* Dashboard_add */
+    .sistem__dashboard--add{
+        grid-template-columns: auto;
+    }
+    .container__text__add{
+        display: flex;
+        margin-bottom: 25px;
+        gap: 15px;
+    }
+    .container__text h3{
+        font-size: 25px;
+        font-weight: 600;
+    }
+    .container__text input{
+        width: 350px;
+        border: none;
+        border-radius: 10px;
+        padding: 5px;
+        outline: 1px solid var(--font-color);
+        font-size: 18px;
+    }
+    .textarea{
+        width: 100%;
+        resize: none;
+        border: none;
+        outline: 1px solid var(--font-color);
+        overflow-x: auto;
+        border-radius: 10px;
+        padding: 10px;
+        font-size: 15px;
+        font-family: var(--font-family);
+        margin-bottom: 15px;
+    }
+    .textarea::placeholder{
+        font-size: 25px;
+    }
+    .container__img__dash__add{
+        width: 800px;
+        display: grid;
+        gap: 15px;
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .img__add{
+        width: 150px;
+        height: 150px;
+        border: 1px solid #111;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        margin-bottom: 15px;
+    }
+    .img__add input{
+        display: none;
+    }
+    .img__add p{
+        font-size: 40px;
+    }
+    .title__plane{
+        font-size: 25px;
+        font-weight: 300;
+        font-family: var(--font-family);
+    }
+    .title--plan{
+        margin-bottom: 10px;
+    }
+    .container__text--accion{
+        margin-bottom: 15px;
+    }
+    .add__dash{
+        width: 200px;
+        background-color: var(--main-color);
+        font-size: 25px;
+        padding: 5px;
+        border: none;
+        border-radius: 10px;
+        margin-left: 20px;
+        cursor: pointer;
+        color: #fff;
+    }
+   
 @media only screen and (max-width:415px) {
     .nav__list--show {
         width: 60%;
