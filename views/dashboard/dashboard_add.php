@@ -38,22 +38,22 @@
            <div class="container__img__dash__add">
                 <div class="img__add">
                     <input type="file" name="" id="file">
-                    <p class="">+</p>
+                    <p class=""><i class='bx bxs-image-add'></i></p>
                 </div>
                 
                 <div class="img__add">
                     <input type="file" name="" id="file">
-                    <p class="">+</p>
+                    <p class=""><i class='bx bxs-image-add'></i></p>
                 </div>
                 
                 <div class="img__add">
                     <input type="file" name="" id="file">
-                    <p class="">+</p>
+                    <p class=""><i class='bx bxs-image-add'></i></p>
                 </div>
                 
                 <div class="img__add">
                     <input type="file" name="" id="file">
-                    <p class="">+</p>
+                    <p class=""><i class='bx bxs-image-add'></i></p>
                 </div>
                 
            </div>
