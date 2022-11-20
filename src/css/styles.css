@@ -566,12 +566,162 @@ section {
         flex-direction: column;
     }
 }
-
+    /* Estilos login */
+    .container__login{
+        height: 100vh;
+        display: grid;
+        place-items: center;
+    }
+    .login{
+        width:  500px;
+        text-align: center;
+    }
+    .title__login{
+        color: var(--main-color);
+        font-family: var(--font-family);
+        text-align: center;
+        padding: 10px 0 50px 0;
+        font-size: 2rem;
+    }
+    .group__input{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 25px;
+    }
+    .input__login{
+        width: 90%;
+        display: block;
+        margin: auto;
+        border: none;
+        height: 40px;
+        border: 1px solid var(--font-color);
+        border-radius: 10px;
+        padding-left: 10px;
+        font-size: 20px;
+        color: var(--font-color);
+        outline: 1px #3891F6;
+    }
+    .btn__login{
+        border: none;
+        background-color: var(--main-color);
+        color: white;
+        padding: 15px;
+        border-radius: 20px;
+        font-size: 20px;
+        box-shadow: 4px 4px 5px #57575740;
+        cursor: pointer;
+        width: 90%;
+    }
+    /* dashboard */
+    .menu__dash{
+        width: 100%;
+        background-color: var(--main-color);
+        display: flex;
+        height: 80px;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+    }
+    .title__dash{
+        font-family: var(--font-family);
+        padding: 10px 0 50px 0;
+        font-size: 2rem;
+        height: 50px;
+    }
+    .title__dash:hover{
+        cursor: default;
+    }
+    .btn__exit{
+        border: none;
+        background-color: var(--font-color);
+        box-shadow: var(--box-shadow);
+        padding: 15px;
+        border-radius: 20px;
+        font-size: 20px;
+        color: #fff;
+        box-shadow: 4px 4px 5px #57575740;
+        cursor: pointer;
+        height: 50px;
+    }
+    .container__dashboard{
+        margin: 0;
+        height: 100vh;
+        overflow: hidden;
+    }
+    .container__dash{
+        display: flex;
+        height: 100%;
+    }
+    .nav__dashboard{
+        width: 20%;
+        background-color: var(--main-color);
+    }
+    .btn__nav__dash{
+        text-align: center;
+        height: 60px;
+        
+    }
+    .btn__nav__dash button{
+        border: none;
+        background: none;
+        font-family: var(--font-family);
+        color: #fff;
+        font-size: 22px;
+        text-align: center;
+        line-height: 60px;
+    }
+    .btn__nav__dash:hover{
+        cursor: pointer;
+        background-color: var(--font-color);
+        transition: all ease-in-out .4s;
+    }
+    .sistem__dashboard{
+        width: 100%;
+        height: 570px;
+        overflow-y: auto;
+        display: grid;
+        padding: 25px;
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .sistem__dashboard::-webkit-scrollbar{
+        width: 10px;
+        background-color: var(--color_header);
+    }
+    .sistem__dashboard::-webkit-scrollbar-thumb{
+        background-color:var(--main-color);
+    }
+    .container__system{
+        text-align: center;
+    }
+    .img__system{
+        width: 200px;
+    }
+    .icon__system{
+       position: relative;
+       bottom: 35px;
+       display: flex;
+       justify-content: space-around;
+       visibility: hidden;
+    }
+    .info__system:hover .icon__system{ 
+        visibility: visible;
+    }
+    .icon__system i{
+        font-size: 25px;
+    }
+    .icon__system i:hover{
+        cursor: pointer;
+    }
+    .name__system{
+        position: relative;
+        bottom: 15px;
+    }
 @media only screen and (max-width:415px) {
     .nav__list--show {
         width: 60%;
     }
-    .us__list {
+    .us__list { 
         width: 80px;
         height: 80px;
         font-size: 14px;
