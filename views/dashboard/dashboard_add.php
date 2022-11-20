@@ -18,6 +18,7 @@
                 </div>
                 <input type="text" name="subtitle">
             </div>
+<<<<<<< HEAD
         </div>
         <h3 class="title">Descripción</h3>
         <div class="container__textarea">
@@ -55,6 +56,39 @@
         </div>
         <h4 class="title__plane">Planes</h4>
         <div>
+=======
+            
+           <div class="container__textarea">
+                <textarea class="textarea" placeholder="Descripcion" name="" id="" cols="30" rows="6"></textarea>
+           </div>
+           <div class="container__textarea">
+                <textarea class="textarea" placeholder="Caracteristicas" name="" id="" cols="30" rows="6"></textarea>
+           </div>
+           <div class="container__img__dash__add">
+                <div class="img__add">
+                    <input type="file" name="" id="file">
+                    <p class=""><i class='bx bxs-image-add'></i></p>
+                </div>
+                
+                <div class="img__add">
+                    <input type="file" name="" id="file">
+                    <p class=""><i class='bx bxs-image-add'></i></p>
+                </div>
+                
+                <div class="img__add">
+                    <input type="file" name="" id="file">
+                    <p class=""><i class='bx bxs-image-add'></i></p>
+                </div>
+                
+                <div class="img__add">
+                    <input type="file" name="" id="file">
+                    <p class=""><i class='bx bxs-image-add'></i></p>
+                </div>
+                
+           </div>
+           <h4 class="title__plane">Planes</h4>
+           <div>
+>>>>>>> c19a188716c408d8d9c9574f1942fe79c72f0ff9
             <div class="container__text">
                 <div class="title">
                     <h4 class="title">Nombre</h4>
