@@ -74,9 +74,3 @@ $(document).on("click", function(e) {
     }
 
 });
-
-$(document).on("change", ".img_post", function(e) {
-
-
-
-});

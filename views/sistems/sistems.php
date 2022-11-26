@@ -21,7 +21,7 @@ foreach ($posts as $post) :
                 <div class="sistem__info__description">
                     <?php echo $post['description'] ?>
                 </div>
-                <button class="btn" data-id="<?php echo $post['id'] ?>">Ver más</button>
+                <button class="btn read_post"   data-id="<?php echo $post['id'] ?>">Ver más</button>
             </div>
 
         </section>

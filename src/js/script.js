@@ -29,6 +29,13 @@ $(".nav__items__links--contact,.nav__items__links--blue").click(function(e) {
     $(".overlay").removeClass("overlay--show ");
 });
 
+$(document).on("click", ".read_post", function(e) {
+    let id = e.target.dataset.id;
+    location.href = `sistem_info?id=${id}`
+        //console.log(e);
+
+});
+
 
 $("#suscription").click(function(e) {
     let form = document.querySelector(".suscriptionForm")
