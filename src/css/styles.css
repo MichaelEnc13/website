@@ -352,17 +352,22 @@ section {
 
 .sistems__container {
     padding: 30px;
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    justify-content: center;
+    gap: 30px;
 }
 
 .sistems {
-    width: 90%;
     margin: auto;
-    display: grid;
-    grid-template-columns: auto 70%;
     background-color: white;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: var(--box-shadow);
+}
+
+.sistem__pic {
+    padding: 15px;
 }
 
 .btn {
