@@ -9,28 +9,54 @@ if (isset($_REQUEST)) :
     $subtitle = isset($_POST['subtitle']) ? $_POST['subtitle'] : "";
     $description = isset($_POST['description']) ? $_POST['description'] : "";
     $features = isset($_POST['features']) ? $_POST['features'] : "";
-    $imgs = isset($_FILES['imgs']) ? $_FILES['imgs'] : "";
+    $imgs = isset($_FILES) ? $_FILES : "";
     $plan = isset($_POST['plan']) ? $_POST['plan'] : "";
-    $date = isset($_POST['date']) ? $_POST['date'] : "";
+    $date = date("d-m-Y");
 
-if(isset($_POST['create_test'])):
-    $data = json_encode($_POST);
-    $done = Poster::create_test($data);
-    
-    var_dump($data);
+    if (isset($_POST['create_test'])) :
+        $json = array(
+            "post_data" => $_POST,
+            "post_files" => $_FILES
+        );
+        $data = json_encode($json);
+        $done = Poster::create_test($data);
+        if ($done['status']) :
+            foreach ($_FILES as $file) :
+                echo Poster::upload($file, $done['lastId']);
+            endforeach;
+        endif;
+    //var_dump($data);
 
-endif;
+    endif;
 
     if (isset($_POST['create'])) :
+        $imgs = json_encode($_FILES);
+        $plans = json_encode(array(
+
+            "plan_name" => $_POST['plan_name'],
+            "plan_desc" => $_POST['plan_desc'],
+            "plan_action_name" => $_POST['plan_action_name'],
+            "plan_action_url" => $_POST['plan_action_url'],
+            "plan_action_price" => $_POST['plan_action_price']
+        ));
         $done = Poster::create(
             $title,
             $subtitle,
             $description,
             $features,
             $imgs,
-            $plan,
+            $plan = $plans,
             $date
         );
+        // var_dump($imgs);
+        //var_dump($_POST);
+        echo $done['error'][2];
+        if ($done['status']) :
+            foreach ($_FILES as $file) :
+                echo Poster::upload($file, $done['lastId']);
+            endforeach;
+
+        endif;
     endif;
     if (isset($_POST['update'])) :
         $done = Poster::update(

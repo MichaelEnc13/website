@@ -30,12 +30,14 @@ class Db
     public static function queries($query, $values)
     {
 
-        $cmd = Db::connect()->prepare($query);
+        $db = Db::connect();
+        $cmd = $db->prepare($query);
         $done = $cmd->execute(is_array($values) ? $values : null);
         return array(
             "status" => $done,
             "data" => $cmd,
-            "error" => $cmd->errorInfo()
+            "error" => $cmd->errorInfo(),
+            "lastId" => $db->lastInsertId()
 
         );
     }

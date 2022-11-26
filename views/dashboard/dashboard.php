@@ -1,6 +1,6 @@
 
 
-        <?php include "nav.php"?>
+ 
         <div class="sistem__dashboard">
             <div class="container__system">
                 <div class="info__system">

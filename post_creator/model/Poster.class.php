@@ -49,10 +49,15 @@ class Poster extends Db
     }
 
 
-    public static function upload($imgs){
-      
-
+    public static function upload($imgs,$id){
+      $name = $imgs['name'];
+      $type = $imgs['type'];
+      if( $type == "image/png" ||  $type == "image/jpg" || $type == "image/jpeg"):
+       
+        
+        if(!is_dir("../../src/uploads/")) mkdir("../../src/uploads/");
+        if(!is_dir("../../src/uploads/post_".$id."/")) mkdir("../../src/uploads/post_".$id."/");
+      endif;
+      return move_uploaded_file($imgs['tmp_name'],"../../src/uploads/post_".$id."/".$id."_img_".$name);
     }
 }
-
-?>

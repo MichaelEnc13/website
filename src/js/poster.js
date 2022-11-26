@@ -9,11 +9,10 @@ $(document).on("click", function(e) {
     let form;
     // console.log(action);
     switch (action) {
-
         case "create":
             form = document.querySelector("form.create");
             data = new FormData(form);
-            data.append("create_test", true)
+            data.append("create", true)
             $.ajax({
                 method: "POST",
                 url: "post_creator/controller/poster.controller.php",
@@ -72,9 +71,6 @@ $(document).on("click", function(e) {
             })
 
             break;
-
-
-
     }
 
 });
