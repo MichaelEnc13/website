@@ -44,7 +44,7 @@ class Poster extends Db
     public static function get_post($id)
     {
         $array = array($id);
-        $query = "SELECT * FROM test WHERE id = ?";
+        $query = "SELECT * FROM sistems_info WHERE id = ?";
         return Poster::queries($query,$array);
     }
 
