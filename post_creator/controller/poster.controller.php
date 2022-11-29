@@ -13,16 +13,20 @@ if (isset($_REQUEST)) :
     $plan = isset($_POST['plan']) ? $_POST['plan'] : "";
     $date = date("d-m-Y");
 
-    if (isset($_POST['create_test'])) :
+    if (isset($_POST['create_test'])) : //SOLO PARA PRUEBAS JSON
         $json = array(
             "post_data" => $_POST,
             "post_files" => $_FILES
         );
+
         $data = json_encode($json);
         $done = Poster::create_test($data);
+        $lastId = $data['lastId'];
+
         if ($done['status']) :
             foreach ($_FILES as $file) :
-                echo Poster::upload($file, $done['lastId']);
+                Poster::save_file($file['name'], $lastId);
+                Poster::upload($file, $done['lastId']);
             endforeach;
         endif;
     //var_dump($data);
@@ -48,12 +52,14 @@ if (isset($_REQUEST)) :
             $plan = $plans,
             $date
         );
-        // var_dump($imgs);
-        //var_dump($_POST);
-        echo $done['error'][2];
+
+        $lastId = $done['lastId'];
         if ($done['status']) :
             foreach ($_FILES as $file) :
-                echo Poster::upload($file, $done['lastId']);
+                if ($file['name'] != "") :
+                    Poster::save_file($file['name'], $lastId)['error'][2];
+                    Poster::upload($file, $lastId);
+                endif;
             endforeach;
 
         endif;

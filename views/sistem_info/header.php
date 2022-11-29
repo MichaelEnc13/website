@@ -3,18 +3,18 @@
     include file_exists("autoload.php") ? "autoload.php" : "post_creator/model/autoload.php";
     $posts = Poster::get_post($_GET['id'])['data']->fetch();
     $datos= json_decode($posts['plan'], true);
-    
-    $img = json_decode($posts['imgs'],true);
-    $img_name_1 = $img['img_1']['name'];
-    $img_name_2 = $img['img_2']['name'];
-    $img_name_3 = $img['img_3']['name'];
-    $img_name_4 = $img['img_4']['name'];
-    $img_1 = "src/uploads/post_".$posts['id']."/".$posts['id']."_img_".$img_name_1;
-    $img_2 = "src/uploads/post_".$posts['id']."/".$posts['id']."_img_".$img_name_2;
-    $img_3 = "src/uploads/post_".$posts['id']."/".$posts['id']."_img_".$img_name_3;
-    $img_4 = "src/uploads/post_".$posts['id']."/".$posts['id']."_img_".$img_name_4;
-
-
+    $imgs = Poster::get_imgs($_GET['id'])['data']->fetchAll();
+ 
+    $img_name_1=$imgs[0]['img_name'];
+    $img_name_2=$imgs[1]['img_name'];
+    $img_name_3=$imgs[2]['img_name'];
+    $img_name_4=$imgs[3]['img_name'];
+ 
+    $img_1 = "src/uploads/post_".$posts['id']."/".$img_name_1;
+    $img_2 = "src/uploads/post_".$posts['id']."/".$img_name_2;
+    $img_3 = "src/uploads/post_".$posts['id']."/".$img_name_3;
+    $img_4 = "src/uploads/post_".$posts['id']."/".$img_name_4;
+ 
 ?>
 <header class="sistem_info_header">
     <div class="sistem_info_header_overlay"></div>

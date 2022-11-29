@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 20-11-2022 a las 20:38:15
+-- Tiempo de generación: 29-11-2022 a las 00:47:35
 -- Versión del servidor: 8.0.21
 -- Versión de PHP: 7.3.21
 
@@ -24,6 +24,28 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `post_imgs`
+--
+
+DROP TABLE IF EXISTS `post_imgs`;
+CREATE TABLE IF NOT EXISTS `post_imgs` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `img_name` text COLLATE utf8_spanish_ci NOT NULL,
+  `post_id` int NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `post_imgs`
+--
+
+INSERT INTO `post_imgs` (`id`, `img_name`, `post_id`) VALUES
+(18, 'pos-checkout.png', 56),
+(17, 'freemail.png', 56);
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `sistems_info`
 --
 
@@ -38,7 +60,14 @@ CREATE TABLE IF NOT EXISTS `sistems_info` (
   `plan` json NOT NULL,
   `date` text COLLATE utf8_spanish_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=57 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+--
+-- Volcado de datos para la tabla `sistems_info`
+--
+
+INSERT INTO `sistems_info` (`id`, `title`, `subtitle`, `description`, `features`, `imgs`, `plan`, `date`) VALUES
+(56, 'TITLE', 'TILESUB', '<p>sadds</p>', '<p>sadsadsa</p>', '{\"img_1\": {\"name\": \"freemail.png\", \"size\": 72198, \"type\": \"image/png\", \"error\": 0, \"tmp_name\": \"C:\\\\wamp64\\\\tmp\\\\phpD20A.tmp\"}, \"img_2\": {\"name\": \"pos-checkout.png\", \"size\": 50266, \"type\": \"image/png\", \"error\": 0, \"tmp_name\": \"C:\\\\wamp64\\\\tmp\\\\phpD20B.tmp\"}, \"img_3\": {\"name\": \"\", \"size\": 0, \"type\": \"\", \"error\": 4, \"tmp_name\": \"\"}, \"img_4\": {\"name\": \"\", \"size\": 0, \"type\": \"\", \"error\": 4, \"tmp_name\": \"\"}}', '{\"plan_desc\": \"\", \"plan_name\": \"\", \"plan_action_url\": \"\", \"plan_action_name\": \"\", \"plan_action_price\": \"\"}', '28-11-2022');
 
 -- --------------------------------------------------------
 
@@ -51,18 +80,14 @@ CREATE TABLE IF NOT EXISTS `test` (
   `id` int NOT NULL AUTO_INCREMENT,
   `post_info` json NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `test`
 --
 
 INSERT INTO `test` (`id`, `post_info`) VALUES
-(8, '{\"title\": \"ENSURANCE\", \"features\": \"esto \\r\\nlo otro\", \"subtitle\": \"Seguros\", \"plan_desc\": \"todas las funciones\", \"plan_name\": \"Especial\", \"create_test\": \"true\", \"description\": \"descripcion\", \"plan_action_url\": \"url\", \"plan_action_name\": \"Adquirir\"}'),
-(7, '{\"title\": \"\", \"features\": \"\", \"subtitle\": \"\", \"plan_desc\": \"\", \"plan_name\": \"\", \"create_test\": \"true\", \"description\": \"\", \"plan_action_url\": \"\", \"plan_action_name\": \"\"}'),
-(9, '{\"title\": \"\", \"features\": \"\", \"subtitle\": \"\", \"plan_desc\": \"\", \"plan_name\": \"\", \"create_test\": \"true\", \"description\": \"<h2 style=\\\"text-align: center; \\\"><del><strong>HOLA MUNDO</strong></del></h2><p><hr></p><p><hr></p><p><hr></p><p><hr></p>\", \"plan_action_url\": \"\", \"plan_action_name\": \"\"}'),
-(10, '{\"title\": \"EL FIAO\", \"features\": \"\", \"subtitle\": \"App de administracion de deudas\", \"plan_desc\": \"\", \"plan_name\": \"\", \"create_test\": \"true\", \"description\": \"<p style=\\\"text-align: center; \\\"><strong><em>las deudas faciles con el fiao</em></strong></p>\", \"plan_action_url\": \"\", \"plan_action_name\": \"\", \"plan_action_price\": \"\"}'),
-(11, '{\"title\": \"\", \"features\": \"\", \"subtitle\": \"\", \"plan_desc\": \"\", \"plan_name\": \"\", \"create_test\": \"true\", \"description\": \"\", \"plan_action_url\": \"\", \"plan_action_name\": \"\", \"plan_action_price\": \"\"}');
+(21, '{\"post_data\": {\"title\": \"Ensurance\", \"features\": \"<p>gratis</p>\", \"subtitle\": \"Sistema de seguros\", \"plan_desc\": \"\", \"plan_name\": \"\", \"create_test\": \"true\", \"description\": \"<p>SISTEMA DE SEGUROS</p>\", \"plan_action_url\": \"\", \"plan_action_name\": \"\", \"plan_action_price\": \"\"}, \"post_files\": {\"img_1\": {\"name\": \"atlantica.png\", \"size\": 31033, \"type\": \"image/png\", \"error\": 0, \"tmp_name\": \"C:\\\\wamp64\\\\tmp\\\\php7E96.tmp\"}, \"img_2\": {\"name\": \"humano.png\", \"size\": 4445, \"type\": \"image/png\", \"error\": 0, \"tmp_name\": \"C:\\\\wamp64\\\\tmp\\\\php7E97.tmp\"}, \"img_3\": {\"name\": \"general.png\", \"size\": 18601, \"type\": \"image/png\", \"error\": 0, \"tmp_name\": \"C:\\\\wamp64\\\\tmp\\\\php7E98.tmp\"}, \"img_4\": {\"name\": \"pepin.png\", \"size\": 307720, \"type\": \"image/png\", \"error\": 0, \"tmp_name\": \"C:\\\\wamp64\\\\tmp\\\\php7E99.tmp\"}}}');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

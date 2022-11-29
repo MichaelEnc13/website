@@ -17,9 +17,11 @@
 
         <?php
         foreach ($posts as $post) :
-            $img = json_decode($post['imgs'], true);
-            $img_name = $img['img_1']['name'];
-            $img_uri = "src/uploads/post_" . $post['id'] . "/" . $post['id'] . "_img_" . $img_name;
+            $imgs = Poster::get_imgs($post['id'])['data']->fetchAll();
+ 
+            $img_name = $imgs[0]['img_name'];
+        
+            $img_uri = "src/uploads/post_" . $post['id'] . "/". $img_name;
             // var_dump($img['img_1']['name'])
         ?>
             <section class="sistems ">
