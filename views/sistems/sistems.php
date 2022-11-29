@@ -2,13 +2,8 @@
     <h1 class="title">Tienda de sistemas</h1>
     
     <?php
-
-    include file_exists("../../post_creator/model/autoload") ? "../../post_creator/model/autoload" : "post_creator/model/autoload.php";
- 
-
-
-    $posts = Poster::get_all_post()['data'];
-      
+        include file_exists("../../post_creator/model/autoload") ? "../../post_creator/model/autoload" : "post_creator/model/autoload.php";
+        $posts = Poster::get_all_post()['data'];
     ?>
 
     <div class="sistem_wrapper">
