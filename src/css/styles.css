@@ -819,12 +819,17 @@ img {
 
 .sistem__dashboard {
     width: 100%;
-    height: 570px;
+    height: 80vh;
     overflow-y: auto;
+    background-color: rgb(214, 211, 211);
+    padding: 15px;
+}
+
+.sistems_wrapper {
     display: grid;
     padding: 25px;
     grid-template-columns: repeat(4, 1fr);
-    background-color: white;
+    gap: 15px;
 }
 
 .sistem__dashboard::-webkit-scrollbar {
@@ -838,6 +843,7 @@ img {
 
 .container__system {
     text-align: center;
+    background-color: white;
 }
 
 .img__system {
@@ -1092,26 +1098,9 @@ img {
     color: var(--main-color);
 }
 
-.sistem__dashboard {
-    width: 100%;
-    height: 570px;
-    overflow-y: auto;
-    display: grid;
-    padding: 25px;
-    grid-template-columns: repeat(4, 1fr);
-}
-
-.sistem__dashboard::-webkit-scrollbar {
-    width: 10px;
-    background-color: var(--color_header);
-}
-
-.sistem__dashboard::-webkit-scrollbar-thumb {
-    background-color: var(--main-color);
-}
-
 .container__system {
     text-align: center;
+    border-radius: 5px;
 }
 
 .img__system {

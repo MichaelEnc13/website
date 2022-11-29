@@ -6,7 +6,7 @@
     <?php echo $posts['description'] ?>    </div>
 
     <div class="sistem_screenshot">
-        <h2 class="title"><?php echo $posts['subtitle'] ?></h2>
+        <h2 class="title">screenshots</h2>
         <div class="sistem_screenshot_container">
             <div class="screenshots">
                 <img src="<?php echo $img_1?>" alt="">
