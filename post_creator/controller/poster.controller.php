@@ -79,5 +79,13 @@ if (isset($_REQUEST)) :
     if (isset($_POST['delete'])) :
 
         $done = Poster::delete($id);
+      
+       
+         
+        $imgs = Poster::get_imgs($id)['data']->fetchAll();
+        foreach($imgs as $img ):
+           unlink("../../src/uploads/post_".$id."/".$img['img_name']);
+        endforeach;
+        rmdir("../../src/uploads/post_".$id);
     endif;
 endif;

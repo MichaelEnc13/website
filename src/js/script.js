@@ -1,3 +1,11 @@
+$('#table').DataTable({
+    destroy: true,
+    scrollY: 300,
+
+    order: [0, 'DESC']
+
+});
+
 function detectPosition() {
     if (window.scrollY > 100) {
         $(".btn_goTop").css("display", "block");
@@ -30,9 +38,9 @@ $(".nav__items__links--contact,.nav__items__links--blue").click(function(e) {
 });
 
 $(document).on("click", ".read_post", function(e) {
-    let id = e.target.dataset.id;
+    let id = e.target.dataset.id ? e.target.dataset.id : e.target.parentElement.dataset.id;
     location.href = `sistem_info?id=${id}`
-        //console.log(e)
+        //console.log(id)
 });
 
 
