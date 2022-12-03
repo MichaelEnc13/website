@@ -24,10 +24,20 @@ $(document).on("click", function(e) {
                 }
             })
             break;
-        case "creates":
-            form = document.querySelector("form.create");
+        case "update":
+            form = document.querySelector("form.update");
             data = new FormData(form);
-            data.append("create", true)
+            id = e.target.dataset.update;
+          
+            //id_img = e.dataset.id_img;
+            // let id_value_img = document.querySelectorAll(".img_post");
+            // id_value_img.forEach(x=> {
+            //     console.log(x.attributes.name.value)
+            // });
+            
+            data.append("update", true)
+            data.append("id", id)
+            //data.append("id_img", id_img)
             $.ajax({
                 method: "POST",
                 url: "post_creator/controller/poster.controller.php",
@@ -39,8 +49,8 @@ $(document).on("click", function(e) {
                 }
             })
             break;
-        case "update":
-            form = document.querySelector("form.update");
+        case "creates":
+            form = document.querySelector("form.create");
             data = new FormData(form);
             data.append("create", true)
             $.ajax({
