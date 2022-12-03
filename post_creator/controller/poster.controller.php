@@ -65,16 +65,35 @@ if (isset($_REQUEST)) :
         endif;
     endif;
     if (isset($_POST['update'])) :
-        $done = Poster::update(
+        $plans = json_encode(array(
+
+            "plan_name" => $_POST['plan_name'],
+            "plan_desc" => $_POST['plan_desc'],
+            "plan_action_name" => $_POST['plan_action_name'],
+            "plan_action_url" => $_POST['plan_action_url'],
+            "plan_action_price" => $_POST['plan_action_price']
+        ));
+         $done = Poster::update(
             $title,
             $subtitle,
             $description,
             $features,
-            $imgs,
-            $plan,
+            "{}",
+            $plans,
             $date,
             $id
-        );
+        ); 
+        echo $done["status"];
+        if ($done['status']) :
+            foreach ($_FILES as $file) :
+                if ($file['name'] != "") :
+                    var_dump($file);
+                    //Poster::update_file($file['name'], $id_img)['error'][2];
+                   // Poster::update_img($file, $id_img);
+                endif;
+            endforeach;
+
+        endif;
     endif;
     if (isset($_POST['delete'])) :
 

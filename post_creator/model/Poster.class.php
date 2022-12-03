@@ -27,6 +27,24 @@ class Poster extends Db
         $query = "UPDATE sistems_info SET  title=?,subtitle=?,description=?,features=?,imgs=?,plan=?,date=? WHERE id = ?";
         return Poster::queries($query, $array);
     }
+    public static function update_file($img_name,$post_id)
+    {
+        $array = array($img_name,$post_id);
+        $query = "UPDATE post_imgs SET img_name=? where id=?";
+        return Poster::queries($query, $array);
+    }
+    public static function update_img($imgs,$id){
+        $name = $imgs['name'];
+        $type = $imgs['type'];
+        if( $type == "image/png" ||  $type == "image/jpg" || $type == "image/jpeg"):
+         
+          
+          if(!is_dir("../../src/uploads/")) mkdir("../../src/uploads/");
+          if(!is_dir("../../src/uploads/post_".$id."/")) mkdir("../../src/uploads/post_".$id."/");
+        endif;
+        return move_uploaded_file($imgs['tmp_name'],"../../src/uploads/post_".$id."/".$name);
+      }
+
     public static function delete($id)
     {
 
