@@ -784,6 +784,7 @@ img {
     margin: 0;
     height: 100vh;
     overflow: hidden;
+    background-color: white;
 }
 
 .container__dash {
@@ -820,16 +821,16 @@ img {
 .sistem__dashboard {
     width: 100%;
     height: 80vh;
-    overflow-y: auto;
-    background-color: rgb(214, 211, 211);
+    overflow-y: hidden;
     padding: 15px;
 }
 
+.sistem__dashboard--add {
+    overflow-y: scroll;
+}
+
 .sistems_wrapper {
-    display: grid;
     padding: 25px;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 15px;
 }
 
 .sistem__dashboard::-webkit-scrollbar {
@@ -873,6 +874,10 @@ img {
 .name__system {
     position: relative;
     bottom: 15px;
+}
+
+#delete {
+    cursor: pointer;
 }
 
 
@@ -1025,33 +1030,38 @@ img {
 .menu__dash {
     width: 100%;
     background-color: var(--main-color);
-    display: flex;
-    height: 80px;
-    justify-content: space-between;
     align-items: center;
     padding: 0 20px;
+    display: grid;
+    grid-template-columns: 60% 30% 10%;
+}
+
+.menu__controls {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.menu__controls a {
+    color: white;
+    font-weight: 500;
 }
 
 .title__dash {
     font-family: var(--font-family);
     padding: 10px 0 50px 0;
     font-size: 2rem;
-    height: 50px;
-}
-
-.title__dash:hover {
-    cursor: default;
+    color: white;
+    text-transform: uppercase;
 }
 
 .btn__exit {
     border: none;
-    background-color: rgb(212, 47, 47);
+    background-color: rgb(255, 255, 255);
     box-shadow: var(--box-shadow);
     padding: 15px;
-    width: 100px;
-    border-radius: 20px;
+    border-radius: 7px;
     font-size: 20px;
-    color: #fff;
+    color: #3891F6;
     box-shadow: 4px 4px 5px #57575740;
     cursor: pointer;
     height: 50px;

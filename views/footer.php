@@ -45,6 +45,7 @@
 
 <script src="src/libs/jquery.min.js"></script>
 <script src="src/libs/sweetAlert.js"></script>
+ 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/all.min.js"></script>
 <script src="src/js/script.js"></script>
 
