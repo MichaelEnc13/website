@@ -53,7 +53,7 @@ $posts = Poster::get_all_post()['data'];
                         <td><?php echo $post['subtitle']; ?></td>
                         <td><?php echo $post['description']; ?></td>
                         <td><?php echo $post['date']; ?></td>
-                        <td><a href="#?<?php echo $post['id']; ?>"><i class="fa-regular fa-pen-to-square"></i></a></td>
+                        <td><a href="dashboard_update?id=<?php echo $post['id']; ?>"><i class="fa-regular fa-pen-to-square"></i></a></td>
                         <td id="delete" data-id="<?php echo $post['id']; ?>"><i class="fa-solid fa-trash"></i></td>
                         <td class="data read_post" data-id="<?php echo $post['id']; ?>"><i class="fa-solid fa-link"></i></td>
                     </tr>

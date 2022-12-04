@@ -33,6 +33,12 @@ class Poster extends Db
         $query = "UPDATE post_imgs SET img_name=? where id=?";
         return Poster::queries($query, $array);
     }
+    public static function get_status($status, $id)
+    {
+        $array = array($status, $id);
+        $query = "UPDATE sistems_info SET status=? where id=?";
+        return Poster::queries($query,$array);
+    }
     public static function update_img($imgs,$id){
         $name = $imgs['name'];
         $type = $imgs['type'];

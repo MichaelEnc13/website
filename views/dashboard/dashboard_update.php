@@ -2,6 +2,7 @@
 
 include file_exists("autoload.php") ? "autoload.php" : "post_creator/model/autoload.php";
 $posts = Poster::get_post($_GET['id'])['data']->fetch();
+Poster::get_status(0,$_GET['id']);
 $datos= json_decode($posts['plan'], true);
 $imgs = Poster::get_imgs($_GET['id'])['data']->fetchAll();
 
@@ -15,7 +16,6 @@ $img_1 = "src/uploads/post_".$posts['id']."/".$img_name_1['img_name'];
 $img_2 = "src/uploads/post_".$posts['id']."/".$img_name_2['img_name'];
 $img_3 = "src/uploads/post_".$posts['id']."/".$img_name_3['img_name'];
 $img_4 = "src/uploads/post_".$posts['id']."/".$img_name_4['img_name'];
-
 ?>
 <h1 class="btn__edit">Editando Sistema</h1>
 <div class="container__dash">
@@ -26,13 +26,13 @@ $img_4 = "src/uploads/post_".$posts['id']."/".$img_name_4['img_name'];
                     <div class="title">
                         <h3>Title</h3>
                     </div>
-                    <input type="text" value="<?php echo $posts['title'] ?>" name="title">
+                    <input type="text" class="input_text" value="<?php echo $posts['title'] ?>" name="title">
                 </div>
                 <div class="container__text">
                     <div class="title">
                         <h3>Subtitle</h3>
                     </div>
-                    <input type="text" value="<?php echo $posts['subtitle'] ?>" name="subtitle">
+                    <input type="text" class="input_text" value="<?php echo $posts['subtitle'] ?>" name="subtitle">
                 </div>
             </div>
 
@@ -86,7 +86,7 @@ $img_4 = "src/uploads/post_".$posts['id']."/".$img_name_4['img_name'];
                         <div class="title">
                             <h4 class="title">Nombre</h4>
                         </div>
-                        <input type="text" value="<?php echo $datos['plan_desc']?>" name="plan_name">
+                        <input class="input_text" type="text" value="<?php echo $datos['plan_desc']?>" name="plan_name">
 
                     </div>
 
@@ -94,7 +94,7 @@ $img_4 = "src/uploads/post_".$posts['id']."/".$img_name_4['img_name'];
                         <div class="title">
                             <h4 class="title">Descripcion</h4>
                         </div>
-                        <input type="text" value="<?php echo $datos['plan_desc']?>"  name="plan_desc">
+                        <input class="input_text" type="text" value="<?php echo $datos['plan_desc']?>"  name="plan_desc">
 
                     </div>
                 </div>
@@ -104,13 +104,12 @@ $img_4 = "src/uploads/post_".$posts['id']."/".$img_name_4['img_name'];
                     <div class="title">
                         <h4 class="title">Accion</h4>
                     </div>
-                    <input type="text"  value="<?php echo $datos['plan_action_name']?>" name="plan_action_name">
-                    <input type="text"  value="<?php echo $datos['plan_action_url']?>" name="plan_action_url">
-                    <input type="text"  value="<?php echo $datos['plan_action_price']?>" name="plan_action_price">
+                    <input class="input_text" type="text"  value="<?php echo $datos['plan_action_name']?>" name="plan_action_name">
+                    <input class="input_text" type="text"  value="<?php echo $datos['plan_action_url']?>" name="plan_action_url">
+                    <input class="input_text" type="text"  value="<?php echo $datos['plan_action_price']?>" name="plan_action_price">
                 </div>
-                <div>
-                    <input class="check" type="checkbox" name="opening">
-                    <button class="add__dash" data-update="<?php echo $posts['id']?>" id="update">Actualizar</button>
+                <div class="container_btn_update">
+                    <button class="add__dash" data-update="<?php echo $posts['id']?>" id="update">Terminar</button>
                 </div>
             </div>
         </form>

@@ -5,6 +5,8 @@ include file_exists("autoload.php") ? "autoload.php" : "../model/autoload.php";
 
 if (isset($_REQUEST)) :
     $id = isset($_POST['id']) ? $_POST['id'] : "";
+    $id_img = isset($_POST['id_img']) ? $_POST['id_img'] : "";
+    $status = isset($_POST['status']) ? $_POST['status'] : "";
     $title = isset($_POST['title']) ? $_POST['title'] : "";
     $subtitle = isset($_POST['subtitle']) ? $_POST['subtitle'] : "";
     $description = isset($_POST['description']) ? $_POST['description'] : "";
@@ -64,6 +66,13 @@ if (isset($_REQUEST)) :
 
         endif;
     endif;
+    if (isset($_POST['update_img'])) :
+         echo Poster::update_file($imgs[1]['name'], $id_img);
+         //Poster::update_img($img, $id_img);
+    endif;
+    if (isset($_POST['update_fish'])) :
+        Poster::get_status($status,$id);
+    endif;
     if (isset($_POST['update'])) :
         $plans = json_encode(array(
 
@@ -83,17 +92,6 @@ if (isset($_REQUEST)) :
             $date,
             $id
         ); 
-        echo $done["status"];
-        if ($done['status']) :
-            foreach ($_FILES as $file) :
-                if ($file['name'] != "") :
-                    var_dump($file);
-                    //Poster::update_file($file['name'], $id_img)['error'][2];
-                   // Poster::update_img($file, $id_img);
-                endif;
-            endforeach;
-
-        endif;
     endif;
     if (isset($_POST['delete'])) :
 
