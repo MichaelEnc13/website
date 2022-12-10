@@ -1,5 +1,9 @@
 $('#description,#features').trumbowyg();
 
+
+$(".trumbowyg-editor").keyup(function(e) {
+    console.log(e.target.innerHTML);
+
 function getQueryVariable(e) {
     let params = new URLSearchParams(location.search);
     return params.get('id');
@@ -40,6 +44,7 @@ $(".img_post").change(function (e) {
     //     console.log(res);
     // }
     // })
+
 
 });
 
