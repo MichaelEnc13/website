@@ -527,7 +527,9 @@ img {
     margin: auto;
     font-size: 20px;
 }
-
+.container_btn_update{
+    text-align: center;
+}
 .title {
     color: var(--main-color);
 }
@@ -725,7 +727,11 @@ img {
     padding: 10px 0 50px 0;
     font-size: 2rem;
 }
-
+.btn__edit{
+    padding: 12px;
+    text-align: center;
+    font-family: var(--font-family);
+}
 .group__input {
     display: flex;
     flex-direction: column;
@@ -975,17 +981,15 @@ img {
 
 .add__dash {
     width: 200px;
-    background-color: var(--main-color);
+    background-color: rgb(49, 168, 73);
     font-size: 25px;
-    padding: 5px;
+    padding: 10px;
     border: none;
     border-radius: 10px;
-    margin-left: 20px;
+    /* margin-left: 20px; */
     cursor: pointer;
     color: #fff;
 }
-
-
 /* Estilos login */
 
 .container__login {
@@ -1252,17 +1256,6 @@ img {
     margin-bottom: 15px;
 }
 
-.add__dash {
-    width: 200px;
-    background-color: var(--main-color);
-    font-size: 25px;
-    padding: 5px;
-    border: none;
-    border-radius: 10px;
-    margin-left: 20px;
-    cursor: pointer;
-    color: #fff;
-}
 
 .container__textarea {
     padding: 30px

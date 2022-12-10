@@ -5,6 +5,8 @@ include file_exists("autoload.php") ? "autoload.php" : "../model/autoload.php";
 
 if (isset($_REQUEST)) :
     $id = isset($_POST['id']) ? $_POST['id'] : "";
+    $id_img = isset($_POST['id_img']) ? $_POST['id_img'] : "";
+    $status = isset($_POST['status']) ? $_POST['status'] : "";
     $title = isset($_POST['title']) ? $_POST['title'] : "";
     $subtitle = isset($_POST['subtitle']) ? $_POST['subtitle'] : "";
     $description = isset($_POST['description']) ? $_POST['description'] : "";
@@ -64,17 +66,32 @@ if (isset($_REQUEST)) :
 
         endif;
     endif;
+    if (isset($_POST['update_img'])) :
+         echo Poster::update_file($imgs[1]['name'], $id_img);
+         //Poster::update_img($img, $id_img);
+    endif;
+    if (isset($_POST['update_fish'])) :
+        Poster::get_status($status,$id);
+    endif;
     if (isset($_POST['update'])) :
-        $done = Poster::update(
+        $plans = json_encode(array(
+
+            "plan_name" => $_POST['plan_name'],
+            "plan_desc" => $_POST['plan_desc'],
+            "plan_action_name" => $_POST['plan_action_name'],
+            "plan_action_url" => $_POST['plan_action_url'],
+            "plan_action_price" => $_POST['plan_action_price']
+        ));
+         $done = Poster::update(
             $title,
             $subtitle,
             $description,
             $features,
-            $imgs,
-            $plan,
+            "{}",
+            $plans,
             $date,
             $id
-        );
+        ); 
     endif;
     if (isset($_POST['delete'])) :
 
