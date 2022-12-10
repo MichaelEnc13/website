@@ -1,6 +1,47 @@
 $('#description,#features').trumbowyg();
 
+function getQueryVariable(e) {
+    let params = new URLSearchParams(location.search);
+    return params.get('id');
+}
+$(".input_text , .trumbowyg-editor").keyup(function (e) {
+    form = document.querySelector("form.update");
+    data = new FormData(form);
+    id = getQueryVariable();
+    //console.log(id)
+            data.append("update", true)
+            data.append("id", id)
+            $.ajax({
+                method: "POST",
+                url: "post_creator/controller/poster.controller.php",
+                data: data,
+                processData: false,
+                contentType: false,
+                success: (res) => {
+                //console.log(res);
+            }
+    })
+});
 
+
+$(".img_post").change(function (e) {
+    let id=e.target.name;
+    let img = e.target.value
+    // data.append("update_img", true)
+    // data.append("id_img", id)
+    console.log(e)
+    // $.ajax({
+    //     method: "POST",
+    //     url: "post_creator/controller/poster.controller.php",
+    //     data: data,
+    //     processData: false,
+    //     contentType: false,
+    //     success: (res) => {
+    //     console.log(res);
+    // }
+    // })
+
+});
 
 $(document).on("click", function(e) {
 
@@ -25,30 +66,34 @@ $(document).on("click", function(e) {
                 }
             })
             break;
-        case "update":
-            form = document.querySelector("form.update");
-            data = new FormData(form);
-            id = e.target.dataset.update;
-          
-            //id_img = e.dataset.id_img;
-            // let id_value_img = document.querySelectorAll(".img_post");
-            // id_value_img.forEach(x=> {
-            //     console.log(x.attributes.name.value)
-            // });
-            
-            data.append("update", true)
-            data.append("id", id)
-            //data.append("id_img", id_img)
-            $.ajax({
-                method: "POST",
-                url: "post_creator/controller/poster.controller.php",
-                data: data,
-                processData: false,
-                contentType: false,
-                success: (res) => {
-                    console.log(res);
-                }
-            })
+            case "update":
+                
+                    swal({
+                        title: "Esta seguro de finalizar con todos los cambios?",
+                        text: "",
+                        icon: "info",
+                        buttons: true,
+                        dangerMode: true,
+                    })
+                    .then((willDelete) => {
+    
+                        if (willDelete) {
+                            let id =e.target.dataset.update
+                            data={status: 1, id: id, update_fish: true}
+                            
+                            $.ajax({
+                                method: "POST",
+                                url: "post_creator/controller/poster.controller.php",
+                                data: data,
+                                //processData: false,
+                                //contentType: false,
+                                success: (res) => {
+                                    console.log(res);
+                                }
+                            })
+                            location.href = `sistem_info`
+                        }
+                    });
             break;
         case "creates":
             form = document.querySelector("form.create");
@@ -66,8 +111,6 @@ $(document).on("click", function(e) {
             })
             break;
         case "delete":
-
-
             var post_id = e.target.parentElement.dataset.id;
             data = {
                 delete: true,
