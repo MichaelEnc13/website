@@ -1,6 +1,8 @@
 $('#description,#features').trumbowyg();
 
-
+$(".trumbowyg-editor").keyup(function(e) {
+    console.log(e.target.innerHTML);
+});
 
 $(document).on("click", function(e) {
 

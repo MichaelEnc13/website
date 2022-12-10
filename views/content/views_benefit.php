@@ -6,7 +6,7 @@
                 <img src="src/img/saving.png" alt="">
             </div>
             <div class="item__benefit__text">
-                <p>Ahorro de dinero. Al ahorrar tiempo se gana en eficiencia: Se gana mas y se gasta menos</p>
+                <p>Ahorra tiempo con procesos automatizados</p>
             </div>
         </div>
         <div class="item__benefit">
@@ -14,7 +14,7 @@
                 <img src="src/img/barra-grafica.png" alt="">
             </div>
             <div  class="item__benefit__text">
-                <p>Se optimiza y adapta al 100% de acuerdo a las necesidades de tu negocio</p>
+                <p>Se adapta a tus necesidades</p>
             </div>
         </div>
         <div class="item__benefit">
@@ -22,7 +22,7 @@
                 <img src="src/img/transferencia-de-datos.png" alt="">
             </div>
             <div  class="item__benefit__text">
-                <p>Los datos estan mas seguro</p>
+                <p>Tu información está respaldada</p>
             </div>
         </div>
         <div class="item__benefit">
@@ -30,7 +30,7 @@
                 <img src="src/img/fecha-limite.png" alt="">
             </div>
             <div class="item__benefit__text">
-                <p>Tu informacion accecible desde cuaquier lugar las 24 horas del dia y los 7 dias de la semana</p>
+                <p>Tu información disponible en todo momento</p>
             </div>
         </div>
     </div>
