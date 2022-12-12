@@ -557,7 +557,7 @@ img {
 
 .sistem_screenshot_container {
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto auto;
     gap: 20px;
 }
 
