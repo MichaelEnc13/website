@@ -28,7 +28,7 @@
                     <div class="sistem__info__description">
                         <?php echo $post['description'] ?>
                     </div>
-                    <button class="btn read_post" data-id="<?php echo $post['id'] ?>">Ver más</button>
+                  <a href="sistem_info?id=<?php echo $post['id'] ?>">  <button class="btn read_post" data-id="<?php echo $post['id'] ?>">Ver más</button></a>
                 </div>
            
             </section>

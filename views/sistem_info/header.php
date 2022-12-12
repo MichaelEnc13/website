@@ -21,8 +21,8 @@
     <img src="<?php echo $img_1?>" alt="">
 
     <div class="sistem_info_header_text">
-        <h1 class="sistem_name"><?php echo $posts['title'] ?></h1>
-        <h3 class="sistem_info"><?php echo $posts['subtitle'] ?></h3>
+        <h1 class="sistem_name info"><?php echo $posts['title'] ?></h1>
+        <h3 class="sistem_info info"><?php echo $posts['subtitle'] ?></h3>
     </div>
 
 </header>

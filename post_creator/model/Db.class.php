@@ -4,9 +4,9 @@
 class Db
 {
 
-    static $user = "u790594714_faceasy_bord";
-    static $password = "Encarnacion132603@";
-    static $host = "mysql:host=localhost;dbname=u790594714_faceasy_bord";
+    static $user = "u790594714_dotsell";
+    static $password = "DotsellSolPass2022@";
+    static $host = "mysql:host=localhost;dbname=u790594714_dotsell";
 
 
     static $user_local = "root";
@@ -17,13 +17,13 @@ class Db
 
     public static function connect()
     {
-/*           if ($_SERVER['SERVER_ADDR'] == "localhost" || $_SERVER['SERVER_NAME'] == "192.168.1.14" || $_SERVER['SERVER_NAME'] == "::1") :
+        if ($_SERVER['REMOTE_ADDR'] == "::1") :
 
             return new PDO(Db::$host_local, Db::$user_local, Db::$password_local);
-            else :
-                return new PDO(Db::$host, Db::$user, Db::$password);
-        endif;  */
-        return new PDO(Db::$host_local, Db::$user_local, Db::$password_local);
+        else :
+            return new PDO(Db::$host, Db::$user, Db::$password);
+        endif;
+     //   return new PDO(Db::$host_local, Db::$user_local, Db::$password_local);
     }
 
 

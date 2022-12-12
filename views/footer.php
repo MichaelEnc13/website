@@ -5,7 +5,7 @@
 
 <footer class="footer">
     <div id="contact" class="footer__title">
-        Contacto
+        Contáctanos
     </div>
 
     <div class="footer__socials">

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3306
--- Tiempo de generación: 03-12-2022 a las 23:45:01
+-- Tiempo de generación: 12-12-2022 a las 23:20:06
 -- Versión del servidor: 8.0.21
 -- Versión de PHP: 7.3.21
 
@@ -24,6 +24,25 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `plan`
+--
+
+DROP TABLE IF EXISTS `plan`;
+CREATE TABLE IF NOT EXISTS `plan` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `plan_name` text COLLATE utf8_spanish_ci NOT NULL,
+  `plan_desc` text COLLATE utf8_spanish_ci NOT NULL,
+  `action_name` text COLLATE utf8_spanish_ci NOT NULL,
+  `action_url` text COLLATE utf8_spanish_ci NOT NULL,
+  `action_price` text COLLATE utf8_spanish_ci NOT NULL,
+  `action_opening` int NOT NULL,
+  `post_id` int NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `post_imgs`
 --
 
@@ -33,34 +52,29 @@ CREATE TABLE IF NOT EXISTS `post_imgs` (
   `img_name` text COLLATE utf8_spanish_ci NOT NULL,
   `post_id` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=38 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=71 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `post_imgs`
 --
 
 INSERT INTO `post_imgs` (`id`, `img_name`, `post_id`) VALUES
-(25, 'freemail.png', 74),
-(24, 'freemail.png', 73),
-(23, 'freemail.png', 72),
-(22, 'freemail.png', 71),
-(21, 'pos-checkout.png', 70),
-(20, 'freemail.png', 70),
-(19, 'fiao.png', 70),
-(18, 'pos-checkout.png', 56),
-(17, 'freemail.png', 56),
-(26, 'freemail.png', 75),
-(27, 'freemail.png', 76),
-(28, 'freemail.png', 77),
-(29, 'freemail.png', 78),
-(30, 'freemail.png', 79),
-(31, 'freemail.png', 80),
-(32, 'freemail.png', 81),
-(33, 'freemail.png', 82),
-(34, 'freemail.png', 83),
-(35, 'freemail.png', 84),
-(36, 'freemail.png', 85),
-(37, 'freemail.png', 86);
+(70, 'freemail.png', 101),
+(69, 'pos-checkout.png', 101),
+(68, 'seguros-client.png', 101),
+(67, 'fiao.png', 101),
+(66, 'pos-checkout.png', 100),
+(65, 'confirmed.png', 100),
+(64, 'nomail.png', 100),
+(63, 'seguros-client.png', 100),
+(62, 'select.png', 99),
+(61, 'trafic.jpg', 99),
+(60, 'confirmed.png', 99),
+(58, 'trafic.jpg', 98),
+(57, 'select.png', 98),
+(56, 'nomail.png', 98),
+(59, 'select.png', 99),
+(55, 'select.png', 98);
 
 -- --------------------------------------------------------
 
@@ -80,27 +94,15 @@ CREATE TABLE IF NOT EXISTS `sistems_info` (
   `plan` json NOT NULL,
   `date` text COLLATE utf8_spanish_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=87 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=102 DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `sistems_info`
 --
 
 INSERT INTO `sistems_info` (`id`, `title`, `subtitle`, `description`, `features`, `imgs`, `status`, `plan`, `date`) VALUES
-(82, 'POST im', '', '', '', '{\"img_1\": {\"name\": \"freemail.png\", \"size\": 72198, \"type\": \"image/png\", \"error\": 0, \"tmp_name\": \"C:\\\\wamp64\\\\tmp\\\\php7E8B.tmp\"}, \"img_2\": {\"name\": \"\", \"size\": 0, \"type\": \"\", \"error\": 4, \"tmp_name\": \"\"}, \"img_3\": {\"name\": \"\", \"size\": 0, \"type\": \"\", \"error\": 4, \"tmp_name\": \"\"}, \"img_4\": {\"name\": \"\", \"size\": 0, \"type\": \"\", \"error\": 4, \"tmp_name\": \"\"}}', 1, '{\"plan_desc\": \"\", \"plan_name\": \"\", \"plan_action_url\": \"\", \"plan_action_name\": \"\", \"plan_action_price\": \"\"}', '28-11-2022'),
-(81, 'POST im', '', '', '', '{\"img_1\": {\"name\": \"freemail.png\", \"size\": 72198, \"type\": \"image/png\", \"error\": 0, \"tmp_name\": \"C:\\\\wamp64\\\\tmp\\\\php7DBF.tmp\"}, \"img_2\": {\"name\": \"\", \"size\": 0, \"type\": \"\", \"error\": 4, \"tmp_name\": \"\"}, \"img_3\": {\"name\": \"\", \"size\": 0, \"type\": \"\", \"error\": 4, \"tmp_name\": \"\"}, \"img_4\": {\"name\": \"\", \"size\": 0, \"type\": \"\", \"error\": 4, \"tmp_name\": \"\"}}', 1, '{\"plan_desc\": \"\", \"plan_name\": \"\", \"plan_action_url\": \"\", \"plan_action_name\": \"\", \"plan_action_price\": \"\"}', '28-11-2022'),
-(80, 'POST im', '', '', '', '{\"img_1\": {\"name\": \"freemail.png\", \"size\": 72198, \"type\": \"image/png\", \"error\": 0, \"tmp_name\": \"C:\\\\wamp64\\\\tmp\\\\php7CF3.tmp\"}, \"img_2\": {\"name\": \"\", \"size\": 0, \"type\": \"\", \"error\": 4, \"tmp_name\": \"\"}, \"img_3\": {\"name\": \"\", \"size\": 0, \"type\": \"\", \"error\": 4, \"tmp_name\": \"\"}, \"img_4\": {\"name\": \"\", \"size\": 0, \"type\": \"\", \"error\": 4, \"tmp_name\": \"\"}}', 1, '{\"plan_desc\": \"\", \"plan_name\": \"\", \"plan_action_url\": \"\", \"plan_action_name\": \"\", \"plan_action_price\": \"\"}', '28-11-2022'),
-(79, 'POST im', '', '', '', '{\"img_1\": {\"name\": \"freemail.png\", \"size\": 72198, \"type\": \"image/png\", \"error\": 0, \"tmp_name\": \"C:\\\\wamp64\\\\tmp\\\\php7C17.tmp\"}, \"img_2\": {\"name\": \"\", \"size\": 0, \"type\": \"\", \"error\": 4, \"tmp_name\": \"\"}, \"img_3\": {\"name\": \"\", \"size\": 0, \"type\": \"\", \"error\": 4, \"tmp_name\": \"\"}, \"img_4\": {\"name\": \"\", \"size\": 0, \"type\": \"\", \"error\": 4, \"tmp_name\": \"\"}}', 1, '{\"plan_desc\": \"\", \"plan_name\": \"\", \"plan_action_url\": \"\", \"plan_action_name\": \"\", \"plan_action_price\": \"\"}', '28-11-2022'),
-(77, 'POST im', '', '', '', '{\"img_1\": {\"name\": \"freemail.png\", \"size\": 72198, \"type\": \"image/png\", \"error\": 0, \"tmp_name\": \"C:\\\\wamp64\\\\tmp\\\\php79C4.tmp\"}, \"img_2\": {\"name\": \"\", \"size\": 0, \"type\": \"\", \"error\": 4, \"tmp_name\": \"\"}, \"img_3\": {\"name\": \"\", \"size\": 0, \"type\": \"\", \"error\": 4, \"tmp_name\": \"\"}, \"img_4\": {\"name\": \"\", \"size\": 0, \"type\": \"\", \"error\": 4, \"tmp_name\": \"\"}}', 1, '{\"plan_desc\": \"\", \"plan_name\": \"\", \"plan_action_url\": \"\", \"plan_action_name\": \"\", \"plan_action_price\": \"\"}', '28-11-2022'),
-(78, 'POST im', '', '', '', '{\"img_1\": {\"name\": \"freemail.png\", \"size\": 72198, \"type\": \"image/png\", \"error\": 0, \"tmp_name\": \"C:\\\\wamp64\\\\tmp\\\\php7ADE.tmp\"}, \"img_2\": {\"name\": \"\", \"size\": 0, \"type\": \"\", \"error\": 4, \"tmp_name\": \"\"}, \"img_3\": {\"name\": \"\", \"size\": 0, \"type\": \"\", \"error\": 4, \"tmp_name\": \"\"}, \"img_4\": {\"name\": \"\", \"size\": 0, \"type\": \"\", \"error\": 4, \"tmp_name\": \"\"}}', 1, '{\"plan_desc\": \"\", \"plan_name\": \"\", \"plan_action_url\": \"\", \"plan_action_name\": \"\", \"plan_action_price\": \"\"}', '28-11-2022'),
-(74, 'POST im', '', '', '', '{\"img_1\": {\"name\": \"freemail.png\", \"size\": 72198, \"type\": \"image/png\", \"error\": 0, \"tmp_name\": \"C:\\\\wamp64\\\\tmp\\\\php754C.tmp\"}, \"img_2\": {\"name\": \"\", \"size\": 0, \"type\": \"\", \"error\": 4, \"tmp_name\": \"\"}, \"img_3\": {\"name\": \"\", \"size\": 0, \"type\": \"\", \"error\": 4, \"tmp_name\": \"\"}, \"img_4\": {\"name\": \"\", \"size\": 0, \"type\": \"\", \"error\": 4, \"tmp_name\": \"\"}}', 1, '{\"plan_desc\": \"\", \"plan_name\": \"\", \"plan_action_url\": \"\", \"plan_action_name\": \"\", \"plan_action_price\": \"\"}', '28-11-2022'),
-(75, 'POST im', '', '', '', '{\"img_1\": {\"name\": \"freemail.png\", \"size\": 72198, \"type\": \"image/png\", \"error\": 0, \"tmp_name\": \"C:\\\\wamp64\\\\tmp\\\\php76E3.tmp\"}, \"img_2\": {\"name\": \"\", \"size\": 0, \"type\": \"\", \"error\": 4, \"tmp_name\": \"\"}, \"img_3\": {\"name\": \"\", \"size\": 0, \"type\": \"\", \"error\": 4, \"tmp_name\": \"\"}, \"img_4\": {\"name\": \"\", \"size\": 0, \"type\": \"\", \"error\": 4, \"tmp_name\": \"\"}}', 1, '{\"plan_desc\": \"\", \"plan_name\": \"\", \"plan_action_url\": \"\", \"plan_action_name\": \"\", \"plan_action_price\": \"\"}', '28-11-2022'),
-(76, 'POST im', '', '', '', '{\"img_1\": {\"name\": \"freemail.png\", \"size\": 72198, \"type\": \"image/png\", \"error\": 0, \"tmp_name\": \"C:\\\\wamp64\\\\tmp\\\\php785B.tmp\"}, \"img_2\": {\"name\": \"\", \"size\": 0, \"type\": \"\", \"error\": 4, \"tmp_name\": \"\"}, \"img_3\": {\"name\": \"\", \"size\": 0, \"type\": \"\", \"error\": 4, \"tmp_name\": \"\"}, \"img_4\": {\"name\": \"\", \"size\": 0, \"type\": \"\", \"error\": 4, \"tmp_name\": \"\"}}', 1, '{\"plan_desc\": \"\", \"plan_name\": \"\", \"plan_action_url\": \"\", \"plan_action_name\": \"\", \"plan_action_price\": \"\"}', '28-11-2022'),
-(61, 'POST', '', '', '', '{\"img_1\": {\"name\": \"\", \"size\": 0, \"type\": \"\", \"error\": 4, \"tmp_name\": \"\"}, \"img_2\": {\"name\": \"\", \"size\": 0, \"type\": \"\", \"error\": 4, \"tmp_name\": \"\"}, \"img_3\": {\"name\": \"\", \"size\": 0, \"type\": \"\", \"error\": 4, \"tmp_name\": \"\"}, \"img_4\": {\"name\": \"\", \"size\": 0, \"type\": \"\", \"error\": 4, \"tmp_name\": \"\"}}', 1, '{\"plan_desc\": \"\", \"plan_name\": \"\", \"plan_action_url\": \"\", \"plan_action_name\": \"\", \"plan_action_price\": \"\"}', '28-11-2022'),
-(71, 'POST im', '', '', '', '{\"img_1\": {\"name\": \"freemail.png\", \"size\": 72198, \"type\": \"image/png\", \"error\": 0, \"tmp_name\": \"C:\\\\wamp64\\\\tmp\\\\php6F9C.tmp\"}, \"img_2\": {\"name\": \"\", \"size\": 0, \"type\": \"\", \"error\": 4, \"tmp_name\": \"\"}, \"img_3\": {\"name\": \"\", \"size\": 0, \"type\": \"\", \"error\": 4, \"tmp_name\": \"\"}, \"img_4\": {\"name\": \"\", \"size\": 0, \"type\": \"\", \"error\": 4, \"tmp_name\": \"\"}}', 1, '{\"plan_desc\": \"\", \"plan_name\": \"\", \"plan_action_url\": \"\", \"plan_action_name\": \"\", \"plan_action_price\": \"\"}', '28-11-2022'),
-(72, 'POST im', '', '', '', '{\"img_1\": {\"name\": \"freemail.png\", \"size\": 72198, \"type\": \"image/png\", \"error\": 0, \"tmp_name\": \"C:\\\\wamp64\\\\tmp\\\\php71C0.tmp\"}, \"img_2\": {\"name\": \"\", \"size\": 0, \"type\": \"\", \"error\": 4, \"tmp_name\": \"\"}, \"img_3\": {\"name\": \"\", \"size\": 0, \"type\": \"\", \"error\": 4, \"tmp_name\": \"\"}, \"img_4\": {\"name\": \"\", \"size\": 0, \"type\": \"\", \"error\": 4, \"tmp_name\": \"\"}}', 1, '{\"plan_desc\": \"\", \"plan_name\": \"\", \"plan_action_url\": \"\", \"plan_action_name\": \"\", \"plan_action_price\": \"\"}', '28-11-2022'),
-(59, 'POST', '', '', '', '{\"img_1\": {\"name\": \"\", \"size\": 0, \"type\": \"\", \"error\": 4, \"tmp_name\": \"\"}, \"img_2\": {\"name\": \"\", \"size\": 0, \"type\": \"\", \"error\": 4, \"tmp_name\": \"\"}, \"img_3\": {\"name\": \"\", \"size\": 0, \"type\": \"\", \"error\": 4, \"tmp_name\": \"\"}, \"img_4\": {\"name\": \"\", \"size\": 0, \"type\": \"\", \"error\": 4, \"tmp_name\": \"\"}}', 1, '{\"plan_desc\": \"\", \"plan_name\": \"\", \"plan_action_url\": \"\", \"plan_action_name\": \"\", \"plan_action_price\": \"\"}', '28-11-2022'),
-(60, 'POST', '', '', '', '{\"img_1\": {\"name\": \"\", \"size\": 0, \"type\": \"\", \"error\": 4, \"tmp_name\": \"\"}, \"img_2\": {\"name\": \"\", \"size\": 0, \"type\": \"\", \"error\": 4, \"tmp_name\": \"\"}, \"img_3\": {\"name\": \"\", \"size\": 0, \"type\": \"\", \"error\": 4, \"tmp_name\": \"\"}, \"img_4\": {\"name\": \"\", \"size\": 0, \"type\": \"\", \"error\": 4, \"tmp_name\": \"\"}}', 1, '{\"plan_desc\": \"\", \"plan_name\": \"\", \"plan_action_url\": \"\", \"plan_action_name\": \"\", \"plan_action_price\": \"\"}', '28-11-2022');
+(101, 'EL FIAO', 'App de administracion de deudas', '<p>EL FIAO FREE</p>', '<p><ul><li>Gratuito</li><li>Facil de usar</li><li>Gráfico de deudas</li><li><br></li></ul></p>', '{\"img_1\": {\"name\": \"fiao.png\", \"size\": 14296, \"type\": \"image/png\", \"error\": 0, \"tmp_name\": \"C:\\\\wamp64\\\\tmp\\\\phpFD2B.tmp\"}, \"img_2\": {\"name\": \"seguros-client.png\", \"size\": 43361, \"type\": \"image/png\", \"error\": 0, \"tmp_name\": \"C:\\\\wamp64\\\\tmp\\\\phpFD2C.tmp\"}, \"img_3\": {\"name\": \"pos-checkout.png\", \"size\": 50266, \"type\": \"image/png\", \"error\": 0, \"tmp_name\": \"C:\\\\wamp64\\\\tmp\\\\phpFD3D.tmp\"}, \"img_4\": {\"name\": \"freemail.png\", \"size\": 72198, \"type\": \"image/png\", \"error\": 0, \"tmp_name\": \"C:\\\\wamp64\\\\tmp\\\\phpFD3E.tmp\"}}', 1, '{\"plan_desc\": \"\", \"plan_name\": \"\", \"plan_action_url\": \"\", \"plan_action_name\": \"\", \"plan_action_price\": \"\"}', '12-12-2022'),
+(100, 'FACTEASY', 'Sistema de facturación', '<p>Este sistema de permite administra de forma sencilla&nbsp;</p>', '<ul><li>Fácil de usar</li><li>Administra tu inventario</li><li>Administra tus ventas</li><li>Crea cotizaciones de forma sencilla</li></ul>   ', '{}', 0, '{\"plan_desc\": null, \"plan_name\": null, \"plan_action_url\": null, \"plan_action_name\": null, \"plan_action_price\": null}', '12-12-2022');
 
 -- --------------------------------------------------------
 

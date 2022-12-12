@@ -49,7 +49,7 @@ $posts = Poster::get_all_post()['data'];
 
                     <tr>
                         <td><?php echo $post['id']; ?></td>
-                        <td>RD <?php echo $post['title']; ?> </td>
+                        <td><?php echo $post['title']; ?> </td>
                         <td><?php echo $post['subtitle']; ?></td>
                         <td><?php echo $post['description']; ?></td>
                         <td><?php echo $post['date']; ?></td>

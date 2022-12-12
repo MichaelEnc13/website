@@ -1,17 +1,21 @@
 * {
     margin: 0;
     padding: 0;
-    list-style: none;
+    /*   list-style: none; */
     text-decoration: none;
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
 
+.trumbowyg-editor ul {
+    list-style-type: disc;
+}
+
 :root {
-    --main-color: #3891F6;
+    --main-color: #3891f6;
     --font-color: #837e7e;
-    --background: #E8E9EC;
-    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --background: #f5f5f5;
+    --font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     --box-shadow: 4px 4px 5px #57575744;
 }
 
@@ -43,6 +47,8 @@ body {
     background-color: white;
     position: sticky;
     top: 0;
+    z-index: 5;
+    border-bottom: 1px solid #57575740;
 }
 
 .nav__brand {
@@ -74,6 +80,7 @@ body {
     margin: auto;
     display: grid;
     grid-template-columns: auto auto auto auto auto;
+    list-style: none;
 }
 
 .nav__items {
@@ -84,11 +91,11 @@ body {
 
 .nav__items__links {
     color: var(--font-color);
-    transition: .5s;
+    transition: 0.5s;
 }
 
 .nav__items__links:hover {
-    color: #3891F6;
+    color: #3891f6;
 }
 
 .nav__items__links--blue,
@@ -138,7 +145,7 @@ body {
     margin: 15px;
     box-shadow: 4px 4px 5px #57575740;
     cursor: pointer;
-    transition: .3s;
+    transition: 0.3s;
 }
 
 
@@ -203,7 +210,7 @@ section {
 }
 
 .item__benefit__img--nube img {
-    width: 100%
+    width: 100%;
 }
 
 
@@ -375,10 +382,9 @@ section {
 
 .sistem_wrapper {
     display: grid;
-    grid-template-columns: auto auto auto;
-    justify-content: center;
+    grid-template-columns: 30% 30% 30%;
+    justify-content: flex-start;
     gap: 30px;
-    grid-auto-flow: row dense;
 }
 
 .sistems {
@@ -468,7 +474,7 @@ section {
     padding-left: 10px;
     font-size: 20px;
     color: var(--font-color);
-    outline: 1px #3891F6;
+    outline: 1px #3891f6;
 }
 
 .footer__rights {
@@ -502,6 +508,7 @@ img {
 
 .sistem_info_header {
     position: relative;
+    overflow: hidden;
 }
 
 .sistem_info_header_overlay {
@@ -518,7 +525,14 @@ img {
     top: 40%;
     z-index: 1;
     font-size: 30px;
-    color: var(--main-color);
+    color: white;
+}
+
+.sistem_info_header_text .info {
+    background-color: var(--main-color);
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 15px;
 }
 
 .sistem_description {
@@ -527,9 +541,11 @@ img {
     margin: auto;
     font-size: 20px;
 }
-.container_btn_update{
+
+.container_btn_update {
     text-align: center;
 }
+
 .title {
     color: var(--main-color);
 }
@@ -566,6 +582,10 @@ img {
     box-shadow: var(--box-shadow);
 }
 
+.features_info_data {
+    padding: 20px;
+}
+
 .features_info {
     font-size: 30px;
 }
@@ -581,8 +601,8 @@ img {
 .price {
     width: 80%;
     margin: auto;
-    display: grid;
-    grid-template-columns: 45% 45%;
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     column-gap: 15px;
     padding: 15px;
@@ -606,7 +626,7 @@ img {
     color: var(--main-color);
 }
 
-@media only screen and (max-width:720px) {
+@media only screen and (max-width: 720px) {
     /* Responsividad de la barra de navegacion */
     .nav {
         grid-template-columns: 90% 10%;
@@ -637,7 +657,7 @@ img {
         width: 0%;
         height: 1000vh;
         right: 0%;
-        transition: .2s;
+        transition: 0.2s;
         top: 0;
         box-shadow: var(--box-shadow);
     }
@@ -727,11 +747,13 @@ img {
     padding: 10px 0 50px 0;
     font-size: 2rem;
 }
-.btn__edit{
+
+.btn__edit {
     padding: 12px;
     text-align: center;
     font-family: var(--font-family);
 }
+
 .group__input {
     display: flex;
     flex-direction: column;
@@ -750,7 +772,7 @@ img {
     padding-left: 10px;
     font-size: 20px;
     color: var(--font-color);
-    outline: 1px #3891F6;
+    outline: 1px #3891f6;
 }
 
 .btn__login {
@@ -837,7 +859,7 @@ img {
 .btn__nav__dash:hover {
     cursor: pointer;
     background-color: var(--font-color);
-    transition: all ease-in-out .4s;
+    transition: all ease-in-out 0.4s;
 }
 
 .sistem__dashboard {
@@ -990,6 +1012,8 @@ img {
     cursor: pointer;
     color: #fff;
 }
+
+
 /* Estilos login */
 
 .container__login {
@@ -1029,7 +1053,7 @@ img {
     padding-left: 10px;
     font-size: 20px;
     color: var(--font-color);
-    outline: 1px #3891F6;
+    outline: 1px #3891f6;
 }
 
 .btn__login {
@@ -1081,7 +1105,7 @@ img {
     padding: 15px;
     border-radius: 7px;
     font-size: 20px;
-    color: #3891F6;
+    color: #3891f6;
     box-shadow: 4px 4px 5px #57575740;
     cursor: pointer;
     height: 50px;
@@ -1121,7 +1145,7 @@ img {
 .btn__nav__dash:hover {
     cursor: pointer;
     background-color: #fff;
-    transition: all ease-in-out .4s;
+    transition: all ease-in-out 0.4s;
 }
 
 .btn__nav__dash:hover button {
@@ -1169,8 +1193,15 @@ img {
     grid-template-columns: auto;
 }
 
+.main_info_dash {
+    display: grid;
+    grid-template-columns: 80% 20%;
+    justify-content: flex-start;
+}
+
 .container__text__add {
     display: flex;
+    justify-content: center;
     margin-bottom: 25px;
     gap: 15px;
 }
@@ -1206,22 +1237,39 @@ img {
     font-size: 25px;
 }
 
-.container__img__dash__add {
-    width: 800px;
+.plan_container {
     display: grid;
-    gap: 15px;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 40% 40%;
+    justify-content: center;
+    gap: 20px;
+}
+
+.plan_creator {
+    background-color: white;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container__img__dash__add {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #5757572c;
+    padding: 15px;
 }
 
 .img__add {
-    width: 150px;
+    width: 100%;
     height: 150px;
     border: 1px solid #111;
     position: relative;
     cursor: pointer;
     margin-bottom: 15px;
     background-color: white;
-    border-radius: 15px
+    border-radius: 15px;
+    overflow: hidden;
 }
 
 .img__add label {
@@ -1254,11 +1302,12 @@ img {
 
 .container__text--accion {
     margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
 }
 
-
 .container__textarea {
-    padding: 30px
+    padding: 30px;
 }
 
 .textarea_container {
@@ -1267,7 +1316,7 @@ img {
     justify-content: center;
 }
 
-@media only screen and (max-width:415px) {
+@media only screen and (max-width: 415px) {
     .nav__list--show {
         width: 60%;
     }
@@ -1361,7 +1410,7 @@ img {
     }
 }
 
-@media only screen and (max-width:361px) {
+@media only screen and (max-width: 361px) {
     .nav__brand__img {
         width: 15%;
     }

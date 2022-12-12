@@ -11,7 +11,7 @@ if (isset($_REQUEST)) :
     $subtitle = isset($_POST['subtitle']) ? $_POST['subtitle'] : "";
     $description = isset($_POST['description']) ? $_POST['description'] : "";
     $features = isset($_POST['features']) ? $_POST['features'] : "";
-    $imgs = isset($_FILES) ? $_FILES : "";
+    $imgs = isset($_FILES) ? "$_FILES" : "";
     $plan = isset($_POST['plan']) ? $_POST['plan'] : "";
     $date = date("d-m-Y");
 
@@ -67,11 +67,15 @@ if (isset($_REQUEST)) :
         endif;
     endif;
     if (isset($_POST['update_img'])) :
-         echo Poster::update_file($imgs[1]['name'], $id_img);
-         //Poster::update_img($img, $id_img);
+        echo  $id_img;
+        echo $id;
+        $done = Poster::update_file($_FILES['img']['name'], $id_img,$id);//actualiza la base de datos
+        echo $done['status'];
+         Poster::upload($_FILES['img'],  $id);//actualiza los archivos 
+
     endif;
     if (isset($_POST['update_fish'])) :
-        Poster::get_status($status,$id);
+        Poster::get_status($status, $id);
     endif;
     if (isset($_POST['update'])) :
         $plans = json_encode(array(
@@ -82,7 +86,7 @@ if (isset($_REQUEST)) :
             "plan_action_url" => $_POST['plan_action_url'],
             "plan_action_price" => $_POST['plan_action_price']
         ));
-         $done = Poster::update(
+        $done = Poster::update(
             $title,
             $subtitle,
             $description,
@@ -91,18 +95,18 @@ if (isset($_REQUEST)) :
             $plans,
             $date,
             $id
-        ); 
+        );
     endif;
     if (isset($_POST['delete'])) :
 
         $done = Poster::delete($id);
-      
-       
-         
+
+
+
         $imgs = Poster::get_imgs($id)['data']->fetchAll();
-        foreach($imgs as $img ):
-           unlink("../../src/uploads/post_".$id."/".$img['img_name']);
+        foreach ($imgs as $img) :
+            unlink("../../src/uploads/post_" . $id . "/" . $img['img_name']);
         endforeach;
-        rmdir("../../src/uploads/post_".$id);
+        rmdir("../../src/uploads/post_" . $id);
     endif;
 endif;
