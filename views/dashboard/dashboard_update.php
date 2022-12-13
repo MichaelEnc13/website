@@ -49,21 +49,7 @@ $uri = "src/uploads/post_" . $posts['id'] . "/";
                     </div>
                 </div>
 
-                <div class="container__img__dash__add">
-                    <?php foreach ($imgs as $img) : ?>
-
-
-                        <div class="img__add">
-                            <form onsubmit='return false' class='update_img_form_<?php echo $img['id'] ?>' enctype="multipart/form-data">
-                                <input type="file" name="img" id="img_<?php echo $img['id'] ?>" class="update_img" data-post_id="<?php echo $img['post_id'] ?>" data-img_id="<?php echo $img['id'] ?>">
-                                <label class="select_new_pic" for="img_<?php echo $img['id'] ?>" data-img_id="<?php echo $img['id'] ?>" data-post_id="<?php echo $img['post_id'] ?>"><i class="fa-regular fa-images"></i></label>
-                                <img class="preview" src="<?php echo $uri . $img['img_name'] ?>">
-                            </form>
-                        </div>
-
-
-                    <?php endforeach; ?>
-                </div>
+                
 
             </div>
 
@@ -147,13 +133,29 @@ $uri = "src/uploads/post_" . $posts['id'] . "/";
 
         </form>
 
+        
+
         <div class="container__img__dash__add">
+                    <?php foreach ($imgs as $img) : ?>
+
+
+                        <div class="img__add">
+                            <form onsubmit='return false' class='update_img_form_<?php echo $img['id'] ?>' enctype="multipart/form-data">
+                                <input type="file" name="img" id="img_<?php echo $img['id'] ?>" class="update_img" data-post_id="<?php echo $img['post_id'] ?>" data-img_id="<?php echo $img['id'] ?>">
+                                <label class="select_new_pic" for="img_<?php echo $img['id'] ?>" data-img_id="<?php echo $img['id'] ?>" data-post_id="<?php echo $img['post_id'] ?>"><i class="fa-regular fa-images"></i></label>
+                                <img class="preview" src="<?php echo $uri . $img['img_name'] ?>">
+                            </form>
+                        </div>
+
+
+                    <?php endforeach; ?>
+                </div>
 
 
             <div class="container_btn_update">
                 <button class="add__dash" data-update="<?php echo $posts['id'] ?>" id="update">Terminar</button>
             </div>
-        </div>
+      
 
     </div>
 
