@@ -1,10 +1,10 @@
-$('#table').DataTable({
+/* $('#table').DataTable({
     destroy: true,
     scrollY: 300,
 
     order: [0, 'DESC']
 
-});
+}); */
 
 function detectPosition() {
     if (window.scrollY > 100) {
