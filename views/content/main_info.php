@@ -1,4 +1,4 @@
-<section class="main_info">
+<section class="main_info col-re">
 
     <div class="info">
         <h2 class="title">Mejora la productividad</h2>
@@ -14,7 +14,7 @@
 
 </section>
 
-<section class="main_info">
+<section class="main_info ">
     <img src="src/img/sistem_2.png" alt="">
     <div class="info">
         <h2 class="title">Vemos lo que necesita tu negocio </h2>
@@ -25,7 +25,7 @@
 
 </section>
 
-<section class="main_info">
+<section class="main_info col-re">
     <div class="info">
         <h2 class="title">Sácale mayor provecho a lo que haces</h2>
         <p>

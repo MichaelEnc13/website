@@ -184,6 +184,7 @@ section {
     color: var(--main-color);
     font-size: 30px;
     margin-top: 20px;
+    padding: 20px;
     text-align: justify;
     display: grid;
     grid-template-columns: 50% 50%;
@@ -194,7 +195,7 @@ section {
 
 .parallax {
     position: sticky;
-    top: 20%;
+    top: 0%;
 }
 
 .main_info p {
@@ -224,6 +225,7 @@ section {
     width: 90%;
     border-radius: 15px;
     font-size: 22px;
+    box-shadow: var(--box-shadow);
 }
 
 .item__benefit__img {
@@ -677,7 +679,7 @@ img {
         display: block;
         font-size: 25px;
         cursor: pointer;
-        color: var(--font-color);
+        color: white;
         z-index: 5;
     }
     .nav__brand__img {
@@ -703,7 +705,7 @@ img {
     }
     .nav__items {
         text-align: center;
-        padding: 15px;
+        padding: 10px;
         overflow: hidden;
     }
     .nav__items:hover {
@@ -711,6 +713,12 @@ img {
     }
     .nav__items__links--blue {
         padding-right: unset;
+    }
+    .nav__items__links {
+        color: var(--main-color);
+    }
+    .nav__brand {
+        width: 80%;
     }
     .jumbutron__infoImg__img {
         width: 80%;
@@ -1388,6 +1396,9 @@ img {
     .main_info {
         display: flex;
         flex-direction: column;
+    }
+    .col-re {
+        flex-direction: column-reverse;
     }
     .title {
         font-size: 20px;

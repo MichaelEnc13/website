@@ -6,7 +6,6 @@
 
 }); */
 
-
 $(document).on("scroll", function() {
     var el = document.querySelector(".benefit__title");
     var vp_pos = el.getBoundingClientRect();
@@ -16,7 +15,7 @@ $(document).on("scroll", function() {
         $(".main_info").addClass("parallax");
     }
 
-    //  console.log();
+
 });
 
 
