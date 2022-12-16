@@ -1,12 +1,14 @@
 <nav class="nav">
-<div class="overlay"></div>
- 
-   <a href="https://www.dotsellsolutions.com" class="nav__items__links">
+    <div class="overlay"></div>
+
+
     <div class="nav__brand">
-        <img class="nav__brand__img" src="src/img/logo.png" alt="">
-        <span class="nav__brand__text">Dotsell Solutions</span>
+        <a href="https://www.dotsellsolutions.com" class="nav__items__links">
+            <img class="nav__brand__img" src="src/img/logo.png" alt="">
+            <span class="nav__brand__text">Dotsell Solutions</span>
+        </a>
     </div>
-</a>
+
 
     <span class="nav__toggle" id="nav__toggle">
         <i class="fa-solid fa-bars"></i>
@@ -22,4 +24,3 @@
     </ul>
 
 </nav>
-

@@ -6,6 +6,20 @@
 
 }); */
 
+
+$(document).on("scroll", function() {
+    var el = document.querySelector(".benefit__title");
+    var vp_pos = el.getBoundingClientRect();
+    if (vp_pos.top < window.innerHeight) {
+        $(".main_info").removeClass("parallax");
+    } else {
+        $(".main_info").addClass("parallax");
+    }
+
+    //  console.log();
+});
+
+
 function detectPosition() {
     if (window.scrollY > 100) {
         $(".btn_goTop").css("display", "block");
