@@ -4,9 +4,9 @@
 
 
 <footer class="footer">
-    <div id="contact" class="footer__title">
+ <!--    <div id="contact" class="footer__title">
         Contáctanos
-    </div>
+    </div> -->
 
     <div class="footer__socials">
         <div class="footer__socials__content">
@@ -49,9 +49,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/js/all.min.js"></script>
 
 <?php if ($_SERVER['SERVER_ADDR'] == "::1") : ?>
-    <script src="src/js/script.js"></script>
+    <script src="src/js/script.js?<?php echo $version; ?>"></script>
 <?php else : ?>
-    <script src="src/js/script.min.js"></script>
+    <script src="src/js/script.min.js?<?php echo $version; ?>"></script>
 <?php endif ?>
 </body>
 

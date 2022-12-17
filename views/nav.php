@@ -17,10 +17,10 @@
     <ul class="nav__list">
 
         <li class="nav__items"><a href="home" class="nav__items__links">Inicio</a></li>
-        <li class="nav__items"><a href="sistem" class="nav__items__links">Nuestros sistemas</a></li>
+        <li class="nav__items"><a href="sistem" class="nav__items__links">Productos</a></li>
         <!-- <li class="nav__items"><a href="about" class="nav__items__links">Nosotros</a></li> -->
-        <li class="nav__items"><a href="#contact" class="nav__items__links nav__items__links--contact">Contacto</a></li>
-        <li class="nav__items nav__items--blue"><a href="#contact" class="nav__items__links nav__items__links--blue">Cotiza tu sistema</a></li>
+        <li class="nav__items"><a href="contact" class="nav__items__links nav__items__links--contact">Contacto</a></li>
+        <li class="nav__items nav__items--blue"><a href="contact?quote" class="nav__items__links nav__items__links--blue">Cotiza tu sistema</a></li>
     </ul>
 
 </nav>

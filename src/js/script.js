@@ -8,13 +8,15 @@
 
 $(document).on("scroll", function() {
     var el = document.querySelector(".benefit__title");
-    var vp_pos = el.getBoundingClientRect();
-    if (vp_pos.top < window.innerHeight) {
-        $(".main_info").removeClass("parallax");
-    } else {
-        $(".main_info").addClass("parallax");
-    }
+    if (el) {
+        var vp_pos = el.getBoundingClientRect();
+        if (vp_pos.top < window.innerHeight) {
+            $(".main_info").removeClass("parallax");
+        } else if (vp_pos.top > window.innerHeight && window.innerWidth > 414) {
+            $(".main_info").addClass("parallax");
+        }
 
+    }
 
 });
 

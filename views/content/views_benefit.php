@@ -35,3 +35,7 @@
         </div>
     </div>
 </section>
+
+<section>
+    <a href="contact"><button style="display:block;margin:auto" class="btn">Cotiza tu sistema</button></a>
+</section>

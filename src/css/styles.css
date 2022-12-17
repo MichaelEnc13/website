@@ -16,7 +16,7 @@
     --font-color: #837e7e;
     --background: #f5f5f5;
     --font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    --box-shadow: 4px 4px 5px #57575744;
+    --box-shadow: 4px 4px 5px #5757571a;
 }
 
 *::-webkit-scrollbar {
@@ -58,12 +58,12 @@ body {
     grid-template-columns: 50% 50%;
     padding: 15px;
     /* background-color: white; */
-    position: sticky;
-    top: 0;
+    /*     position: sticky;
+    top: 0; */
     z-index: 5;
     /*   border-bottom: 1px solid #57575740; */
     background: rgb(28, 73, 123);
-    background: linear-gradient(90deg, rgba(28, 73, 123, 1) 0%, rgba(56, 145, 246, 1) 100%);
+    background: linear-gradient( 90deg, rgba(28, 73, 123, 1) 0%, rgba(56, 145, 246, 1) 100%);
 }
 
 .nav__brand {
@@ -115,7 +115,7 @@ body {
 }
 
 .nav__items__links:hover {
-    color: #cdcdce;
+    transform: translate(0%, -7%);
 }
 
 .nav__items__links--blue,
@@ -137,11 +137,11 @@ body {
     display: grid;
     grid-template-columns: 50% 50%;
     /*     background-color: white; */
-    border-radius: 0px 0px 40px 40px;
+    /* border-radius: 0px 0px 40px 40px; */
     box-shadow: 5px 5px 7px #57575740;
     place-items: center;
     background: rgb(28, 73, 123);
-    background: linear-gradient(90deg, rgba(28, 73, 123, 1) 0%, rgba(56, 145, 246, 1) 100%);
+    background: linear-gradient( 90deg, rgba(28, 73, 123, 1) 0%, rgba(56, 145, 246, 1) 100%);
 }
 
 .jumbutron__info__text {
@@ -226,6 +226,23 @@ section {
     border-radius: 15px;
     font-size: 22px;
     box-shadow: var(--box-shadow);
+    transition: 0.5s;
+}
+
+.item__benefit:hover {
+    box-shadow: 10px 10px 10px #57575757;
+    transform: translate(0%, -5%);
+    cursor: pointer;
+}
+
+.client__img {
+    transition: .5s;
+}
+
+.client__img:hover,
+.sistems:hover {
+    transform: translate(0%, -5%);
+    cursor: pointer;
 }
 
 .item__benefit__img {
@@ -237,7 +254,8 @@ section {
 .item__benefit__text {
     padding: 25px;
     color: rgb(74, 74, 74);
-    text-align: center;
+    text-align: left;
+    font-size: 18px;
 }
 
 .item__benefit__img--nube img {
@@ -424,6 +442,7 @@ section {
     border-radius: 10px;
     overflow: hidden;
     box-shadow: var(--box-shadow);
+    transition: .5s;
 }
 
 .btn {
@@ -464,10 +483,10 @@ section {
 
 .footer {
     background-color: white;
-    border-radius: 40px 40px 0px 0px;
+    /*   border-radius: 40px 40px 0px 0px; */
     padding: 30px;
     background: rgb(28, 73, 123);
-    background: linear-gradient(90deg, rgba(28, 73, 123, 1) 0%, rgba(56, 145, 246, 1) 100%);
+    background: linear-gradient( 90deg, rgba(28, 73, 123, 1) 0%, rgba(56, 145, 246, 1) 100%);
 }
 
 .footer__title {
@@ -736,7 +755,7 @@ img {
         font-size: 25px;
     }
     .benefit__title {
-        font-size: 37px;
+        font-size: 25px;
     }
     /* Nube */
     .nube__info {
@@ -762,6 +781,10 @@ img {
     }
     /* Sistemas */
     .sistems {
+        display: flex;
+        flex-direction: column;
+    }
+    .sistem_wrapper {
         display: flex;
         flex-direction: column;
     }
@@ -1409,7 +1432,7 @@ img {
     .benefit__title {
         padding: 10px;
         margin-bottom: 23px;
-        font-size: 35px;
+        font-size: 20px;
     }
     .item__benefit__text {
         font-size: 20px;
@@ -1436,6 +1459,30 @@ img {
     }
     .client__container {
         width: 100%;
+    }
+    .sistem_screenshot_container {
+        display: flex;
+        flex-direction: column;
+        width: 95%;
+        margin: auto;
+    }
+    .sistem_screenshot {
+        width: 95%;
+        margin: auto;
+    }
+    .screenshots {
+        width: 100%;
+    }
+    .sistem_info_header_text {
+        top: 30%;
+        font-size: 15px;
+    }
+    .features {
+        display: flex;
+        flex-direction: column;
+    }
+    .features_info_data {
+        font-size: 16px;
     }
     .footer__socials {
         grid-template-columns: 100%;
