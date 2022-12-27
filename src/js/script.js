@@ -55,6 +55,77 @@ $(document).on("click", ".read_post", function(e) {
     location.href = `sistem_info?id=${id}`
         //console.log(id)
 });
+$(document).on("click", ".btn__exit", function(e) {
+    location.href = `login.php`
+        //console.log(id)
+});
+$(document).on("click", ".btn_register", function(e) {
+    form = document.querySelector("form.form_login");
+    data = new FormData(form);
+    data.append("login", true)
+    if(data.get("usuario")=="" || data.get("pass")==""){
+        swal(`Todos los campos son requeridos`, {
+            icon: "error",
+        });
+    }else{
+    $.ajax({
+        method: "POST",
+        url: "post_creator/controller/poster.controller.php",
+        data: data,
+        processData: false,
+        contentType: false,
+        success: (res) => {
+            console.log(res);
+            swal(`Se registro con exito a ${res}`, {
+                icon: "success",
+            });
+            }
+        })
+    }
+});
+$(document).on("click", ".btn_new_post",function (e) {
+    //location.href = `dashboard_add`
+    e.preventDefault()
+    data={new_post : "true"}
+    $.ajax({
+        method: "POST",
+        url: "post_creator/controller/poster.controller.php",
+        data: data,
+        success: (res) => {
+            console.log(res)
+            location.href = `dashboard_update?id=${res}`
+        }
+    })
+});
+$(document).on("click", ".btn_start", function(e) {
+    form = document.querySelector("form.form_login");
+    data = new FormData(form);
+    data.append("login_start", true)
+    if(data.get("usuario")=="" || data.get("pass")==""){
+        swal(`Todos los campos son requeridos`, {
+            icon: "error",
+        });
+    }else{
+        $.ajax({
+        method: "POST",
+        url: "post_creator/controller/poster.controller.php",
+        data: data,
+        processData: false,
+        contentType: false,
+        success: (res) => {
+            //console.log(res);
+            if(res==false){
+                console.log(res);
+                swal(`Usuario o Contraseña incorrecta`, {
+                    icon: "error",
+                });
+            }else{
+                location.href = `dashboard`
+            }
+        }
+    })
+    }
+});
 
 
 

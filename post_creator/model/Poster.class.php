@@ -7,13 +7,45 @@ include file_exists("autoload.php") ? "autoload.php" : "../post_creator/model/au
 
 class Poster extends Db
 {
-
     public static function create_test($data)
     {
-
         $array = array($data);
         $query = "INSERT INTO test (post_info) VALUES(?)";
         return Poster::queries($query, $array);
+    }
+    public static function login_regiter($user,$pass)
+    {
+        $encriptar=password_hash($pass,PASSWORD_DEFAULT);
+        $array=array($user,$encriptar);
+        $query = "INSERT INTO login_dotsell (users, pass) values(?,?)";
+        return Poster::queries($query, $array)['lastId'];
+    }
+    public static function login_start($user, $pass)
+    {
+        $array=array($user);
+        $query = "SELECT * FROM login_dotsell WHERE users = ?";
+        $name =Poster::queries($query, $array)['data']->fetch();
+
+        if(password_verify($pass,$name['pass'])){
+            session_start();
+            $_SESSION['user'] = $name["users"];
+            echo true;
+        }else{
+            echo false;  
+        }
+    }
+    public static function verificar_post($status)
+    {
+            $array=array($status);
+            $query = "SELECT * FROM sistems_info WHERE status = ?";
+            return Poster::queries($query, $array)['data']->fetch();
+    }
+    public static function post_update()
+    {
+        $array = array($title="", $subtitle="", $description="", $features="", $imgs="{}", $plan="{}", $date="");
+        $query = "INSERT INTO sistems_info (title,subtitle,description,features,imgs,plan,date) VALUES(?,?,?,?,?,?,?)";
+        $id_post =Poster::queries($query, $array);
+        return $id_post;
     }
     public static function create($title, $subtitle, $description, $features, $imgs, $plan, $date)
     {

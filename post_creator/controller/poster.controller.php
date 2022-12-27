@@ -5,6 +5,8 @@ include file_exists("autoload.php") ? "autoload.php" : "../model/autoload.php";
 
 if (isset($_REQUEST)) :
     $id = isset($_POST['id']) ? $_POST['id'] : "";
+    $user = isset($_POST['usuario']) ? $_POST['usuario'] : "";
+    $pass = isset($_POST['pass']) ? $_POST['pass'] : "";
     $id_img = isset($_POST['id_img']) ? $_POST['id_img'] : "";
     $status = isset($_POST['status']) ? $_POST['status'] : "";
     $title = isset($_POST['title']) ? $_POST['title'] : "";
@@ -73,6 +75,24 @@ if (isset($_REQUEST)) :
         echo $done['status'];
          Poster::upload($_FILES['img'],  $id);//actualiza los archivos 
 
+    endif;
+    if (isset($_POST['login'])) :
+        $done = Poster::login_regiter($user, $pass);
+        echo $done;
+    endif;
+    if (isset($_POST['new_post'])):
+        $status=0;
+        $done = Poster::verificar_post($status);
+        if($done["status"]==""):
+            $id = Poster::post_update();
+            echo $id['lastId'];             
+        else:
+            echo $done["id"];  
+         endif;
+    endif;
+    if (isset($_POST['login_start'])) :
+        $done = Poster::login_start($user, $pass);
+        echo $done;
     endif;
     if (isset($_POST['update_fish'])) :
         Poster::get_status($status, $id);

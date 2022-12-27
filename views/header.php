@@ -20,8 +20,7 @@ $tel = "+1 829-445-5432";
     <script src="src/libs/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <link rel="stylesheet" href="src/libs/trumbowyg.min.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
-    
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css"> 
     <link rel="shortcut icon" href="src/img/logo.png" type="image/x-icon">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-B5498KPHKT"></script>
 <script>
