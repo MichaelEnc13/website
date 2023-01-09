@@ -1,10 +1,10 @@
-/* $('#table').DataTable({
+$('#table').DataTable({
     destroy: true,
     scrollY: 300,
 
     order: [0, 'DESC']
 
-}); */
+}); 
 
 $(document).on("scroll", function() {
     var el = document.querySelector(".benefit__title");

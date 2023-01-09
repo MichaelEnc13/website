@@ -1,5 +1,11 @@
 DirectoryIndex home.php
 
+#oculta las carpetas de la pagina
+options All -indexes
+
+#Envia a paginaError segun el codigo
+ErrorDocument 404 /login.php
+
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^([^\.]+)$ $1.php [NC,L]
